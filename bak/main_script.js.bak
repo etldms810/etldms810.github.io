@@ -1,0 +1,100 @@
+
+	var swiper = new Swiper(".mySwiper", {
+		  effect: 'fade',
+		  autoHeight: true,
+		  direction: "horizontal",
+		  initialSlide : 0,
+		  slidesPerView: 'auto',
+		  observer: true,
+		  observeParents: true, 
+		  autoplay:
+			{
+				delay : 3000,
+			},
+		  mousewheel: true,
+		  loop: true,
+		  pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		  },    
+		  navigation: {
+                nextEl: ".Next",
+                prevEl: ".Preview",
+          },
+	});
+
+	const shinMainVis_1 = document.querySelectorAll(".shinMainVis_1");
+	const shinMainVis_2 = document.querySelectorAll(".shinMainVis_2");
+	const shinMainVis_3 = document.querySelectorAll(".shinMainVis_3");
+	const title1 = document.querySelectorAll(".Title > h2");
+	const title2 = document.querySelectorAll(".Title > p");
+	const Ntitle1 = document.querySelectorAll(".NTitle > h2");
+	const Ntitle2 = document.querySelectorAll(".NTitle > p");
+	const green1 = document.querySelectorAll(".greenNumber2");
+	const green2 = document.querySelectorAll(".greenNumber0");
+	const green3 = document.querySelectorAll(".greenNumber22");
+	const green4 = document.querySelectorAll(".greenNumber4");
+	const greenDragon = document.querySelectorAll(".greenDragon");
+	const amore_MainVis1 = document.querySelectorAll(".amore_MainVis1");
+	const amore_MainVis2 = document.querySelectorAll(".amore_MainVis2");
+	const amore_MainVis3 = document.querySelectorAll(".amore_MainVis3");
+	const inter_Fog = document.querySelectorAll(".inter_Fog");
+	const wiseStar = document.querySelectorAll(".wiseStar");
+	const wiseBook = document.querySelectorAll(".wiseBook");
+	const wiseApple = document.querySelectorAll(".wiseApple");
+	const shinhan_1 = document.querySelectorAll(".shinhan_1");
+	const shinhan_2 = document.querySelectorAll(".shinhan_2");
+	const shinhan_3 = document.querySelectorAll(".shinhan_3");
+
+	const tl = gsap.timeline({paused: true, delay:0.4});
+	const tan = gsap.timeline({paused: true, delay:0.4});
+
+
+
+	//신세계 메인
+    tl.fromTo(shinMainVis_1,{opacity:0, x:-1920},{duration:1.7, opacity:1, x:0},'+=0.5')
+	tl.fromTo(shinMainVis_2,{opacity:0, x:1920},{duration:1.7, opacity:1, x:0},'<')
+	tl.fromTo(shinMainVis_3,{opacity:0, x:-1920},{duration:1.7, opacity:1, x:0},'<')
+	//NTitle
+	tl.fromTo(Ntitle1,{opacity:0, x:-100},{duration:0.5, opacity:1, x:0},'-=1.5')
+	tl.fromTo(Ntitle2,{opacity:0, x:-100},{duration:0.5, opacity:1, x:0},'-=1.0')
+	//green
+	tl.fromTo(green1,{opacity:0, x:-200},{duration:0.8, opacity:1, x:0},'<0.2')
+	tl.fromTo(green2,{opacity:0, x:-200},{duration:0.8, opacity:1, x:0},'<0.2')
+	tl.fromTo(green3,{opacity:0, x:-200},{duration:0.8, opacity:1, x:0},'<0.2')
+	tl.fromTo(green4,{opacity:0, x:-200},{duration:0.8, opacity:1, x:0},'<0.2')
+	tl.fromTo(greenDragon,{opacity:0, x:50, y:70},{duration:0.2, opacity:1, x:0, y:0},'<1')
+	//Title
+	tl.fromTo(title1,{opacity:0, x:-100},{duration:0.5, opacity:1, x:0},'-=0.8')
+	tl.fromTo(title2,{opacity:0, x:-100},{duration:0.5, opacity:1, x:0},'<0.5')
+	//아모레
+    tl.fromTo(amore_MainVis1,{opacity:0, x:1000},{duration:1.2, opacity:1, x:0},'-=3')
+	tl.fromTo(amore_MainVis2,{opacity:0, x:1000},{duration:1.2, opacity:1, x:0},'<0.4')
+	tl.fromTo(amore_MainVis3,{opacity:0, x:1000},{duration:1.2, opacity:1, x:0},'<0.4')
+	//안개
+	tl.fromTo(inter_Fog,{opacity:0, y:500},{duration:2, opacity:1, y:0},'<')
+	//와이즈캠프pc
+    tl.fromTo(wiseStar,{opacity:0, y:50},{duration:0.3, opacity:1, y:0},'<0.5')
+	tl.fromTo(wiseBook,{opacity:0, y:50},{duration:0.3, opacity:1, y:0},'<0.2')
+	tl.fromTo(wiseApple,{opacity:0, y:50},{duration:0.3, opacity:1, y:0},'<0.2')
+	//신한
+    tl.fromTo(shinhan_1,{opacity:0, x:-100},{duration:1, opacity:1, x:0},'<-0.5')
+	tl.fromTo(shinhan_2,{opacity:0, x:-100},{duration:1, opacity:1, x:0},'<0.2')
+	tl.fromTo(shinhan_3,{opacity:0, x:-100},{duration:1, opacity:1, x:0},'<0.2')
+
+	
+
+    tl.play();
+
+	swiper.on("init", function() {
+	  tl.play(); 
+	  tan.play(); 
+	});
+
+	swiper.on("slideChange", function() {
+	   tl.restart(); 
+	   tl.play();
+
+       tan.restart(); 
+	   tan.play();
+   });

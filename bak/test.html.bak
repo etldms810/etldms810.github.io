@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+		.bar-container {
+			display: flex;
+			align-items: flex-end;
+		}
+		.bar {
+			width:50%;
+			height: 1080px;
+			margin: 0;
+			background-color: lightgray;
+			transform-origin: bottom;
+			will-change: transform;
+		}
+		.bar:nth-child(5n+1) { background-color:crimson; }
+		.bar:nth-child(5n+2) { background-color: gold; }
+		.bar:nth-child(5n+3) { background-color: forestgreen; }
+		.bar:nth-child(5n+4) { background-color: dodgerblue; }
+		.bar:nth-child(5n+5) { background-color: darkorchid; }
+	</style>
+ </head>
+ <body>
+    <div class="bar-container"></div>
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+	<script>
+		const barContainer = document.querySelector('.bar-container');
+		const bars = [];
+		let bar;
+		for (let i = 0; i < 5; i++) {
+			bar = document.createElement('div');
+			bar.classList.add('bar');
+			barContainer.append(bar);
+			bars.push(bar);
+		}
+
+		const line1 = document.querySelectorAll(".bar");
+		const tl = gsap.timeline();
+		tl.fromTo(line1,{opacity:0, scaleY:0.7},{duration:1.2, scaleY:1,opacity:1, delay:0.5, stagger:0.3})
+
+
+    </script>
+ </body>
+</html>

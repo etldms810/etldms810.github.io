@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!--js-->
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			const line1 = document.querySelectorAll(".bg");
+			const tl = gsap.timeline();
+			const mu = gsap.timeline();
+			const allMenu = gsap.timeline();
+			const mu_list = gsap.timeline();
+
+			$(".home_btn a").on("click",function(){
+				$('.allMenu').stop().fadeIn(300);
+				$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+			   
+				tl.fromTo(line1,{opacity:0, scale:0},{duration:0.8, opacity:1, scale:100, xPercent:250, yPercent:250, delay:0.5, transformOrigin:"botton rihgt", ease: "power2.out",})
+				mu.to('.mu',{duration:0.8, opacity:1,delay:1})
+				mu_list.to('.mu_list',{duration:0.5, opacity:1,delay:1})
+
+			});
+			$(".closeBtn").on("click",function(){
+				//$('.allMenu').stop().fadeOut(300);
+				$('html, body').css({'overflow': '', 'height': ''});
+
+				mu_list.to('.mu_list',{duration:0.3, opacity:0,})
+				mu.to('.mu',{duration:0.3, opacity:0,})
+				tl.to(line1,{duration:0.8, opacity:0, scale:0, xPercent:0, yPercent:0,delay:0.3, transformOrigin:"botton rihgt",ease: "power2.out",})
+				allMenu.to('.allMenu',{duration:0.8, display:'none',delay:0.5})
+			});
+		});
+	</script>
+ </head>
+ <body>
+    <div class="wrap">
+	    <!--home_btn-->
+		<p class="home_btn"><a href="#"><img src="../image/ham_btn.png" alt="ham_btn"></a></p>
+		<!--nav-->
+		<div class="allMenu">
+			<div class="mu_list">
+				<ul class="list_box BOX1">
+					<li><a href="#">신세계건설<b>RESPONSIVE FULL.JS</b></a></li>
+					<li class="eng"><a href="#">BANILA CO<b>RESPONSIVE WEB</b></a></li>
+					<li class="eng"><a href="#">GREENCAR<b>MD PROMOTION FULL.JS</b></a></li>
+					<li class="eng"><a href="#">GREENCAR<b>MOBILE FIGMA</b></a></li>
+					<li><a href="#">와이즈캠프<b>WEBSITE RENEWAL</b></a></li>
+				</ul>
+				<ul class="list_box">
+					<li><a href="#">와이즈캠프<b>MOBILE</b></a></li>
+					<li class="eng"><a href="#">INTERPARK<b>FUKUOKA</b></a></li>
+					<li class="eng"><a href="#">EVENT PROMOTION<b>CHRISTMAS</b></a></li>
+					<li><a href="#">서울대학교<b>SEOUL NATIONAL UNIVERSITY</b></a></li>
+					<li class="eng"><a href="#">GODIVA<b>CAFE WEBSITE RENEWAL</b></a></li>
+				</ul>
+			</div>
+			<div class="mu"><p class="closeBtn"><img src="../image/ham_btnB.png" alt="ham_btnB"></p></div>
+			<div class="bg"></div>
+		</div>
+		<!--//home_btn-->
+		<!--shinsegae_vis-->
+		<div class="shinsegae_vis greenPC_vis">
+			<div class="shinsegae_vis_inner greenPC_vis_inner inner">
+				<div class="txtBox">
+					<p data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out"><span><img src="../image/greenPC/greenLogo.png" alt="greenLogo"></span>그린카 크리스마스 프로모션</p>
+					<h2 data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="300">GREEN CAR PROMOTION</h2>
+				</div>
+				<p data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear"><img src="../image/greenPC/vismokup.png" alt="vismokup"></p>
+			</div>
+		</div>
+		<!--//shinsegae_vis-->
+		<!--shinsegae_content-->
+		<div class="shinsegae_content">
+			<!--shinsegae_explanation-->
+			<div class="shinsegae_explanation">
+				<div class="shinsegae_explanation_inner greenPC_explanation_inner inner">
+					<div class="topTxt">
+						<h2>CHRISTMAS PROMOTION</h2>
+						<h3>그린카 크리스마스<br>프로모션</h3>
+						<p><a href="../work/GREENCAR/index.html">SITE LINE<span><img src="../image/greenPC/sitelinkArrow.png" alt="sitelinkArrow"></span><b></b></a></p>
+					</div>
+					<div class="bottomTxt">
+						<div class="Ltxt">
+							<h2>OVER VIEW</h2>
+							<p>크리스마스 프로모션인 만큼 그린카의 컬러와 <br>3d 아이콘들로 통통튀는 느낌을 살리려 노력했습니다. </p>
+						</div>
+						<div class="Rtxt">
+							<h2>MAIN COLOR</h2>
+							<div class="color">
+								<p></p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//shinsegae_explanation-->
+			<!--shinmokuppull-->
+			<div class="shinmokuppull">
+				<div class="shinmokuppull_inner inner">
+					<p data-aos="fade-down" data-aos-duration="800" data-aos-easing="linear"><img src="../image/greenPC/mainmokuppull.png" alt="mainmokuppull"></p>
+
+				</div>
+			</div>
+			<!--//shinmokuppull-->
+			<!--promotion_mokup-->
+			<div class="promotion_mokup"><img src="../image/greenPC/promotion_mokup_greenPC.jpg" alt="promotion_mokup_greenPC"></div>
+			<!--//promotion_mokup-->
+		</div>
+		<!--//shinsegae_content-->
+		<!--topbtn-->
+		<div class="topbtn" id="topbtn"><a href="#"><span class="material-icons">expand_less</span></a></div>
+		<!--//topbtn-->
+		<!--preview_next-->
+		<div class="preview_next">
+			<div class="preview_box" onclick="location.href='banilaco.html'">
+				<p><img src="../image/arrowBanilaco.jpg" alt="arrowGreen"></p>
+				<h2><span><img src="../image/preview_arrow.png" alt="next_arrow"></span>&nbsp;&nbsp;PREVIEW WORK</h2>
+				<span></span>
+			</div>
+			<div class="next_box" onclick="location.href='green_figma.html'">
+				<p><img src="../image/arrowGreen_figma.jpg" alt="arrowBanilaco"></p>
+				<h2>NEXT WORK&nbsp;&nbsp;<span><img src="../image/next_arrow.png" alt="next_arrow"></span></h2>
+				<span></span>
+			</div>
+		</div>
+		<div class="preview_next570">
+			<div class="preview_next570_inner">
+				<p class="preview"><a href="#"><span><img src="../image/preview_arrow570.png" alt="next_arrow"></span>&nbsp;&nbsp;PREVIEW WORK</a></p>
+				<p class="next"><a href="#">NEXT WORK&nbsp;&nbsp;<span><img src="../image/next_arrow570.png" alt="next_arrow"></span></a></p>
+			</div>
+		</div>
+		<!--//preview_next-->
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".shinsegae_explanation_inner > .topTxt > p").mouseover(function(){
+				$(".shinsegae_explanation_inner > .topTxt > p a span img").attr("src","../image/shinsegae/sitelinkArrow_W.png");
+			});
+			$(".shinsegae_explanation_inner > .topTxt > p").mouseleave(function(){
+				$(".shinsegae_explanation_inner > .topTxt > p a span img").attr("src","../image/greenPC/sitelinkArrow.png");
+			});
+			//topbtn
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 1000){
+					$(".topbtn").fadeIn("slow");
+				}else{
+					$(".topbtn").fadeOut("slow");
+				}
+			});
+			$(".topbtn").click(function(){
+				$("html,body").animate({
+					scrollTop : "0"
+				},600);
+			});
+			AOS.init({
+				easing: 'ease-out-back',
+			});
+		});
+	</script>
+ </body>
+</html>

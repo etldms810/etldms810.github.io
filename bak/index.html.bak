@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--js-->
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+		$(document).ready(function(){
+			const line1 = document.querySelectorAll(".bg");
+			const tl = gsap.timeline();
+			const mu = gsap.timeline();
+			const allMenu = gsap.timeline();
+			const mu_list = gsap.timeline();
+
+			$(".home_btn a").on("click",function(){
+				$('.allMenu').stop().fadeIn(300);
+				$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+			   
+				tl.fromTo(line1,{opacity:0, scale:0},{duration:0.8, opacity:1, scale:100, xPercent:250, yPercent:250, delay:0.5, transformOrigin:"botton rihgt", ease: "power2.out",})
+				mu.to('.mu',{duration:0.8, opacity:1,delay:1})
+				mu_list.to('.mu_list',{duration:0.5, opacity:1,delay:1})
+
+			});
+			$(".closeBtn").on("click",function(){
+				//$('.allMenu').stop().fadeOut(300);
+				$('html, body').css({'overflow': '', 'height': ''});
+
+				mu_list.to('.mu_list',{duration:0.3, opacity:0,})
+				mu.to('.mu',{duration:0.3, opacity:0,})
+				tl.to(line1,{duration:0.8, opacity:0, scale:0, xPercent:0, yPercent:0,delay:0.3, transformOrigin:"botton rihgt",ease: "power2.out",})
+				allMenu.to('.allMenu',{duration:0.8, display:'none',delay:0.5})
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+	    <!--home_btn-->
+		<p class="home_btn"><a href="#"><img src="image/ham_btn.png" alt="ham_btn"></a></p>
+		<!--nav-->
+		<div class="allMenu">
+			<div class="mu_list inner">
+				<ul class="list_box BOX1">
+					<li><a href="sub/shinsegae.html">신세계건설<b>RESPONSIVE FULL.JS</b></a></li>
+					<li class="eng"><a href="sub/banilaco.html">BANILA CO<b>RESPONSIVE WEB</b></a></li>
+					<li class="eng"><a href="sub/greenCar_PC.html">GREENCAR<b>MD PROMOTION FULL.JS</b></a></li>
+					<li class="eng"><a href="sub/green_figma.html">GREENCAR<b>MOBILE FIGMA</b></a></li>
+					<li><a href="sub/wise_PC.html">와이즈캠프<b>WEBSITE RENEWAL</b></a></li>
+				</ul>
+				<ul class="list_box">
+					<li><a href="sub/wise_mobile.html">와이즈캠프<b>MOBILE</b></a></li>
+					<li><a href="sub/shinhan.html">신한카드<b>APP RENEWAL</b></a></li>
+					<li class="eng"><a href="sub/amore.html">EVENT PROMOTION<b>CHRISTMAS</b></a></li>
+					<li class="eng"><a href="sub/interpark.html">INTERPARK<b>FUKUOKA</b></a></li>
+					<li><a href="sub/seoul.html">서울대학교<b>SEOUL NATIONAL UNIVERSITY</b></a></li>
+				</ul>
+			</div>
+			<div class="mu"><p class="closeBtn"><a href="#"><img src="image/ham_btnB.png" alt="ham_btnB"></a></p></div>
+			<div class="bg"></div>
+		</div>
+		<!--//home_btn-->
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+			    <!--shinsegae--> 
+				<div class="swiper-slide slide01 items">
+				    <div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/shinMainVisBG.png" alt="shinMainVisBG"></div>
+						<div class="shinMainVis_1"><img src="image/main/shinMainVis1.png" alt="shinMainVis1"></div>
+						<div class="shinMainVis_2"><img src="image/main/shinMainVis2.png" alt="shinMainVis2"></div>
+						<div class="shinMainVis_3"><img src="image/main/shinMainVis3.png" alt="shinMainVis3"></div>
+					    <div class="thumbnail_inner">
+							<div class="Title">
+								<!--viewMore-->          
+								<div class="mainSec01" onclick="location.href='sub/shinsegae.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>SHINSEGAE E&C</h2>
+								<p><span><img src="image/main/subTit_icon_red.png" alt="subTit_icon_red"></span>&nbsp;&nbsp;&nbsp;&nbsp;신세계 웹사이트 리뉴얼 반응형</p>
+							</div>
+							<p class="page_bar"><b>01</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//shinsegae--> 
+				<!--banilaco--> 
+				<div class="swiper-slide slide02 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/banilaMainVisBG.png" alt="banilaMainVisBG"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreB" onclick="location.href='sub/banilaco.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>BANILA CO<br>WEB SHOPPING MALL</h2>
+								<p><span><img src="image/main/subTit_icon_pink.png" alt="subTit_icon_pink"></span>&nbsp;&nbsp;&nbsp;&nbsp;바닐라코 웹 쇼핑몰 리뉴얼 반응형</p>
+							</div>
+							<p class="page_bar"><b>02</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//banilaco--> 
+				<!--greencar_PC--> 
+				<div class="swiper-slide slide03 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/greenMainVisBG.png" alt="greenMainVisBG"></div>
+						<div class="greenNumber2"><img src="image/main/greenNumber2.png" alt="greenNumber2"></div>
+						<div class="greenNumber0"><img src="image/main/greenNumber0.png" alt="greenNumber0"></div>
+						<div class="greenNumber22"><img src="image/main/greenNumber22.png" alt="greenNumber22"></div>
+						<div class="greenNumber4"><img src="image/main/greenNumber4.png" alt="greenNumber4"></div>
+						<div class="greenDragon"><img src="image/main/greenDragon.png" alt="greenDragon"></div>
+						<div class="greenCar"><img src="image/main/greenCar.png" alt="greenCar"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreG" onclick="location.href='sub/greenCar_PC.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>GREEN CAR<br>CHRISTMAS PROMOTION</h2>
+								<p><span><img src="image/main/subTit_icon_white.png" alt="subTit_icon_white"></span>&nbsp;&nbsp;&nbsp;&nbsp;그린카 크리스마스 프로모션</p>
+							</div>
+							<p class="page_bar"><b>03</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//greencar_PC-->
+				<!--greencar_Figma-->
+				<div class="swiper-slide slide04 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/green_figmaMainVisBG.png" alt="green_figmaMainVisBG"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreGF" onclick="location.href='sub/green_figma.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>GREEN CAR&nbsp;<span class="shinhan_fLogo"><img src="image/main/figmaLogo.png" alt="figmaLogo"></span><br>CHRISTMAS PROMOTION</h2>
+								<p><span><img src="image/main/subTit_icon_green.png" alt="subTit_icon_green"></span>&nbsp;&nbsp;&nbsp;&nbsp;그린카 크리스마스 프로모션 피그마</p>
+							</div>
+							<p class="page_bar"><b>04</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//greencar_Figma-->
+				<!--wiseCamp_pc-->
+				<div class="swiper-slide slide05 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG wiseP_MainVisBG"><img src="image/main/wiseMainVisBG.png" alt="wiseMainVisBG"></div>
+						<div class="wiseStar"><img src="image/main/wiseStar.png" alt="wiseStar"></div>
+						<div class="wiseBook"><img src="image/main/wiseBook.png" alt="wiseBook"></div>
+						<div class="wiseApple"><img src="image/main/wiseApple.png" alt="wiseApple"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreW" onclick="location.href='sub/wise_PC.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>WISE CAMP<br>RENEWAL</h2>
+								<p><span><img src="image/main/subTit_icon_yellow.png" alt="subTit_icon_yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;와이즈캠프 홈페이지 리뉴얼</p>
+							</div>
+							<p class="page_bar"><b>05</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//wiseCamp_pc-->
+				<!--wiseCamp_mobile-->
+				<div class="swiper-slide slide06 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreWF" onclick="location.href='sub/wise_mobile.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>WISE CAMP<br>RENEWAL MOBILE</h2>
+								<p><span><img src="image/main/subTit_icon_yellow.png" alt="subTit_icon_yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;와이즈캠프 모바일 리뉴얼</p>
+							</div>
+							<p class="page_bar"><b>06</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//wiseCamp_mobile-->
+				<!--shinhan-->
+				<div class="swiper-slide slide7 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinhan_1"><img src="image/main/shinhan_1.png" alt="shinhan_1"></div>
+						<div class="shinhan_2"><img src="image/main/shinhan_2.png" alt="shinhan_2"></div>
+						<div class="shinhan_3"><img src="image/main/shinhan_3.png" alt="shinhan_3"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01" onclick="location.href='sub/shinhan.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>SHINHAN CARD<br>APP FIGMA&nbsp;<span class="shinhan_fLogo"><img src="image/main/figmaLogo.png" alt="figmaLogo"></span></h2>
+								<p><span><img src="image/main/subTit_icon_white.png" alt="subTit_icon_white"></span>&nbsp;&nbsp;&nbsp;&nbsp;신한카드 앱 리뉴얼 피그마</p>
+							</div>
+							<p class="page_bar"><b>07</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//shinhan-->
+				<!--christmas_promotion-->
+				<div class="swiper-slide slide08 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/amoreMainVisBG.png" alt="amoreMainVisBG"></div>
+						<div class="amore_MainVis1"><img src="image/main/amore_MainVis1.png" alt="amore_MainVis1"></div>
+						<div class="amore_MainVis2"><img src="image/main/amore_MainVis2.png" alt="amore_MainVis2"></div>
+						<div class="amore_MainVis3"><img src="image/main/amore_MainVis3.png" alt="amore_MainVis3"></div>
+					    <div class="thumbnail_inner">
+							<div class="Title tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01 viewMoreC" onclick="location.href='sub/amore.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>EVENT PROMOTION<br>CHRISTMAS</h2>
+								<p><span><img src="image/main/subTit_icon_red.png" alt="subTit_icon_red"></span>&nbsp;&nbsp;&nbsp;&nbsp;이벤트 크리스마스 프로모션</p>
+							</div>
+							<p class="page_bar"><b>08</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//christmas_promotion-->
+				<!--interPark-->
+				<div class="swiper-slide slide09 items">
+					<div class="thumbnail">
+						<div class="shinMainVisBG"><img src="image/main/interMainVisBG.png" alt="interMainVisBG"></div>
+						<div class="inter_Fog"><img src="image/main/inter_Fog.png" alt="inter_Fog"></div>
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01  viewMoreI" onclick="location.href='sub/interpark.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2 class="inter_INTERLogo">INTERPARK FUKUOKA<br>PROMOTION&nbsp;<span><img src="image/main/interLogo.png" alt="interLogo"></span></h2>
+								<p><span><img src="image/main/subTit_icon_red.png" alt="subTit_icon_red"></span>&nbsp;&nbsp;&nbsp;&nbsp;인터파크 후쿠오카 프로모션</p>
+							</div>
+							<p class="page_bar"><b>09</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//interPark-->
+				<!--seoul_uni-->
+				<div class="swiper-slide slide10 items">
+					<div class="thumbnail">
+						<div class="Preview"><a href="#"><span></span><span></span><b>PREVIEW</b></a></div>
+						<div class="Next"><a href="#"><b>NEXT</b><span></span><span></span></a></div>
+						<div class="shinMainVisBG"><img src="image/main/seoulMainVisBG.png" alt="seoulMainVisBG"></div>
+					    <div class="thumbnail_inner">
+							<div class="NTitle tow_way">
+								<!--viewMore-->          
+								<div class="mainSec01" onclick="location.href='sub/seoul.html'">
+									<i class="icoCircle"></i>
+									<p><img src="image/main/viewmore_Arrow_red.png" alt="viewmore_Arrow_red"></p>
+								</div>
+								<!-- //viewMore -->
+								<h2>SEOUL NATIONAL<br>UNIVERSITY</h2>
+								<p><span><img src="image/main/subTit_icon_blue.png" alt="subTit_icon_blue"></span>&nbsp;&nbsp;&nbsp;&nbsp;서울대학교 홈페이지 리뉴얼</p>
+							</div>
+							<p class="page_bar"><b>10</b>&nbsp;&nbsp;/&nbsp;&nbsp;10</p>
+					    </div>
+					</div>
+				</div>
+				<!--//seoul_uni-->
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="mobile_work">
+			<ul class="inner">
+				<li><a href="sub/shinsegae.html"><img src="image/main/shinsegae1024.jpg" alt="shinsegae1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/banilaco1024.jpg" alt="banilaco1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/green1024.jpg" alt="green1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/greenFigma1024.jpg" alt="greenFigma1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/wise1024.jpg" alt="wise1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/wiseM1024.jpg" alt="wiseM1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/shinhan1024.jpg" alt="shinhan1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/amore1024.jpg" alt="amore1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/interpark1024.jpg" alt="interpark1024"></a></li>
+				<li><a href="sub/shinsegae.html"><img src="image/main/seoul1024.jpg" alt="seoul1024"></a></li>
+			</ul>
+		</div>
+	</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script  src="js/main_script.js"></script>
+  <script>
+		$(document).ready(function(){
+			$(".home_btn").mouseover(function(){
+				$(".home_btn > a img").attr("src","image/ham_btnR.png");
+			});
+			$(".home_btn").mouseleave(function(){
+				$(".home_btn > a img").attr("src","image/ham_btn.png");
+			});
+			//$(".mainSec01").mouseover(function(){
+				//$(".mainSec01 > p img").attr("src","image/main/viewmore_Arrow.png");
+			//});
+			//$(".mainSec01").mouseleave(function(){
+				//$(".mainSec01 > p img").attr("src","image/main/viewmore_Arrow_red.png");
+			//});
+		});
+	</script>
+
+</body>
+</html>

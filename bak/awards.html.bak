@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.../../css/4.1.1/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<!-- Add the slick css-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Add the js-->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="../../js/jquery.effects.core.js" type="text/javascript"></script>
+	<script type="text/JavaScript" src="../../js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//gnb
+			$('#gnb').slicknav();
+			$("#gnb .head").click(function(){
+				$(this).css("color","#ffcc00").next(".mu_list").slideToggle(300).siblings(".mu_list").slideUp(300);
+				$(this).siblings("#gnb ,head").css("color","#fff");
+			});
+			// 대메뉴에서 특정 버튼에 마우스온할때
+			$("#gnb > li > a").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+				$('#gnb > li > ul').slideDown('fast');
+				$("#smenu_bar").slideDown();
+				$("header").addClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo2_6.png");
+				$(".nav-list > li > a").css("color","#000");
+			});
+			$(".nav-list > li.in_menu05").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/globalRed.png");
+			});
+
+			// 메뉴에서 마우스가 빠져나가면 메뉴를 닫는다
+			$(".nav").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global.png");
+				$('#gnb > li > ul').fadeOut('fast');
+				$('#smenu_bar').fadeOut('fast');
+				$("header").removeClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo1.png");
+				$(".nav-list > li > a").css("color","#fff");
+			});
+			$(".nav-list > li.in_menu05").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+			});
+			$(".slicknav_menu").click(function(){ 
+				$('header').css("background","#000");
+				$(".slicknav_menu").click(function(){
+					$('header').css("background","none");
+				});
+			});
+			//FamilySite
+			$(".family_btn").click(function(){
+				if($(".family_box").css("display")=="none"){
+					$(".family_box").slideDown();
+					$(".family_btn img").attr("src","../../image/main/family_arrowA.png");
+					$(".family_btn").css({
+						border:"1px solid #db0b11",
+					});
+				}else{
+					$(".family_box").slideUp();
+					$(".family_btn img").attr("src","../../image/main/family_arrowD.png");
+					$(".family_btn").css({
+						border:"1px solid #c5c5c5",
+					});
+				}
+			});
+			//buttontab
+			$(".buttontab_btn").click(function(){
+				if($(".buttontab_box").css("display")=="none"){
+					$(".buttontab_box").slideDown();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowA.png");
+				}else{
+					$(".buttontab_box").slideUp();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowD.png");
+				}
+			});
+		});
+	</script>
+ </head>
+ <body id="main">
+	<div id="wrap">
+	    <!--header-->
+		<header>
+			<!-- nav -->
+			<nav class="nav">
+				<div class="inner_nav">
+					<h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1>
+
+					<ul class="nav-list" id="gnb">
+						<li class="in_menu01 head"><a href="#">회사소개</a>
+							<ul>
+								<li><a href="../company/CEO.html">인사말</a></li>
+								<li><a href="../company/vision.html">비전&경영이념</a></li>
+								<li><a href="ci.html">연혁</a></li>
+								<li><a href="../csr/csr.html">미래성장 연구소</a></li>
+								<li><a href="../csr/management.html">오시는길</a></li>
+							</ul>
+						</li>
+						<li class="in_menu02 head"><a href="#">사업분야</a>
+							<ul>
+								<li><a href="../business/housing.html">주거시설</a></li>
+								<li><a href="news.html">건축시설</a></li>
+								<li><a href="awards.html">토목시설</a></li>
+								<li><a href="ci.html">레저사업</a></li>
+							</ul>
+						</li>
+						<li class="in_menu03 head"><a href="#">지속가능경영</a>
+							<ul>
+								<li><a href="../csr/csr.html">개요</a></li>
+								<li><a href="../csr/management.html">투명경영</a></li>
+								<li><a href="../business/riverent.html">사회공헌</a></li>
+								<li><a href="../company/vision.html">품질경영</a></li>
+								<li><a href="../company/CEO.html">안전보건경영</a></li>
+							</ul>
+						</li>
+						<li class="in_menu04 head"><a href="#">정보센터</a>
+							<ul>
+								<li><a href="news.html">뉴스</a></li>
+								<li><a href="awards.html">수상</a></li>
+								<li><a href="ci.html">CI&BI</a></li>
+								<li><a href="../business/riverent.html">투자정보</a></li>
+								<li><a href="awards.html">채용</a></li>
+							</ul>
+						</li>
+						<li class="in_menu05 head"><a href="#"><span><img src="../../image/main/global.png" alt="global"></span>&nbsp;&nbsp;ENG</a>
+							<ul>
+								<li><a href="../company/vision.html">KR</a></li>
+								<li><a href="news.html">EN</a></li>
+								<li><a href="../csr/csr.html">CN</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="smenu_bar"></div>
+			</nav>
+			<!-- //nav -->
+			<!-- mobile_menu -->
+			<div id="mobile_menu"><h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1></div>
+			<!-- //mobile_menu -->
+		</header>
+		<!--//header-->
+		<!--awards_visual-->
+		<div class="awards_visual">
+			<div class="awards_visual_inner inner">
+				<div class="txtBox">
+					<h2><img src="../../image/information/awardsVisTxt.png" alt="awardsVisTxt"></h2>
+					<p>신세계 건설은 28개의 수상과 28개의 인증을 받았습니다.</p>
+				</div>
+			</div>
+		</div>
+		<!--//awards_visual-->
+		<!--awards_wrap-->
+		<div class="awards_wrap">
+			<!--sub_tab-->
+			<div class="sub_tab">
+				<div class="tab">
+					<div class="tab_inner inner">
+						<h2>INFORMATION</h2>
+						<div class="tab_gnb">
+							<ul>
+								<li><a href="news.html">뉴스</a></li>
+								<li class="active"><a href="awards.html">수상</a></li>
+								<li><a href="ci.html">CI & BI</a></li>
+								<li><a href="bi.html">투자정보</a></li>
+								<li><a href="news.html">채용</a></li>
+							</ul>
+						</div>
+						<!--1000tab-->
+						<div class="buttontab">
+							<div class="buttontab_box business_box">
+								<ul>
+									<li><a href="news.html">뉴스</a></li>
+									<li><a href="news.html">뉴스</a></li>
+									<li class="active"><a href="awards.html">수상</a></li>
+									<li><a href="ci.html">CI & BI</a></li>
+									<li><a href="bi.html">투자정보</a></li>
+									<li><a href="news.html">채용</a></li>
+								</ul>
+							</div>
+							<div class="buttontab_btn"><p>수상&nbsp&nbsp <img src="../../image/tabArrowD.png" alt="tabArrowD"></p></div>
+						</div>
+						<!--//1000tab-->
+					</div>
+				</div>
+			</div>
+			<!--//sub_tab-->
+			<!--awards_content-->
+			<div class="awards_content">
+				<!--awards_tabs-->
+				<div class="awards_tabs inner">
+					<div class="txtBox">
+						<h2>AWARDS</h2>
+						<p>신세계 건설은 28 개의 수상과 28 개의 인증을 받았습니다.</p>
+					</div>
+					<ul class="tabs">
+						<li class="active" rel="tab1">수상</li>
+						<li rel="tab2" onclick="location.href='bi.html'">인증</li>
+					</ul>
+				</div>
+				<!--//awards_tabs-->
+				<!--awards_history-->
+				<div class="awards_history">
+					<div class="contanier">
+						<!--수상-->
+						<div class="history inner_sub">
+							<div class="inner">
+								<div class="inner_box">
+									<div class="his_left historyBox">
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2023</h3>
+										<ul>
+											<li>
+												<b>01</b>
+												<p>2023 부산다운 건축상 장려상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;부산광역시</p>
+											</li>
+											<li>
+												<b>09</b>
+												<p>2023 부산다운 건축상 장려상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;부산광역시</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2022</h3>
+										<ul>
+											<li>
+												<p>2022년 LH 우수시공업체 수상 (화성태안3 A-1 BL 아파트) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국토지주택공사</p>
+												<b>05</b>
+											</li>
+											<li>
+												<p>2022년 대한민국 조경대상 문화체육부장관상 수상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국조경학회 (주최 : 국토교통부)</p>
+												<b>08</b>
+											</li>
+											<li>
+												<p>경기도 건축문화상 은상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;경기도 <br>지역건설 활성화 상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;부산·진해경제자유구역청</p>
+												<b>10</b>
+											</li>
+											<li>
+												<p>하도급 관리 우수 건설현장 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;부산광역시 <br>대한민국 디지털 광고대상 은상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국 디지털광고협회</p>
+												<b>12</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2020</h3>
+										<ul>
+											<li>
+												<b>05</b>
+												<p>2020년 LH 우수시공업체 선정 (시흥은계아파트) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;주관기간 한국토지주택공사</p>
+											</li>
+											<li>
+												<b>11</b>
+												<p>BIM AWARDS 2020 건축부문 장려상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;국토교통부, (사)빌딩스마트협회 <br>2020년 전기설비 운영 우수사례 공모전 금상 수상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국전기 기술인협회</p>
+											</li>
+											<li>
+												<b>12</b>
+												<p>사회적 가치증진과 공사발전에 기여 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국자산공사</p>
+											</li>
+										</ul> 
+									</div>
+								</div>
+
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2019</h3>
+										<ul>
+											<li>
+												<p>2019년 LH 우수시공업체 선정 (시흥목감아파트 & 강릉유천아파트) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국토지주택공사</p>
+												<b>04</b>
+											</li>
+											<li>
+												<p>대구은행 본점 리모델링 국토교통부장관상 대상 수상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;국토교통부</p>
+												<b>09</b>
+											</li>
+											<li>
+												<p>2018년 동계올림픽 대회 및 동계패럴림픽 대회 성공개최 기여 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;문화체육부</p>
+												<b>12</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2017</h3>
+										<ul>
+											<li>
+												<b>10</b>
+												<p>제 26회 대구광역시 건축상 일반분야 대상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;대구광역시</p>
+											</li>
+											<li>
+												<b>11</b>
+												<p>2017 시공VE 우수사례 경진대회 최우수상 (비용절감분야) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국토지주택공사</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2016</h3>
+										<ul>
+											<li>
+												<p>대한민국 토목∙건축 기술 대상 건축부문 대상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;매일경제신문, mbn, 대한건축학회, 대한토목학회</p>
+												<b>12</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2015</h3>
+										<ul>
+											<li>
+												<b>07</b>
+												<p>BIM AWARDS 2015 건축부문 우수상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;(사)빌딩스마트협회, 한국건설기술연구원</p>
+											</li>
+											<li>
+												<b>11</b>
+												<p>건설업 안전보건활동 발표대회 (건축분야) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국산업안전보건공단, 고용노동부</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2010</h3>
+										<ul>
+											<li>
+												<p>제 5회 건설업체 창의 혁신 우수사례 경진대회 은상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;국토해양부</p>
+												<b>05</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2009</h3>
+										<ul>
+											<li>
+												<b>03</b>
+												<p>부산 국제 건축 문화제대상 (센텀시티 신세계UEC) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;부산광역시</p>
+											</li>
+											<li>
+												<b>10</b>
+												<p>친환경건축물 인증서 센텀시티 신세계UEC <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;크레비즈인증원 (구 한국능률협회인증원)</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2007</h3>
+										<ul>
+											<li>
+												<p>대한민국 토목∙건축 기술 대상 건축부문 최우수상 (상업용) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;매일경제신문, mbn, 대한건축학회, 대한토목학회</p>
+												<b>12</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2006</h3>
+										<ul>
+											<li>
+												<b>03</b>
+												<p>공정거래 자율준수 평가대회 공정거래위원장상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국공정경쟁연합회</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2005</h3>
+										<ul>
+											<li>
+												<p>노사문화 우수기업 노동부장관상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;노동부</p>
+												<b>09</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90">
+										<h3>2003</h3>
+										<ul>
+											<li>
+												<b>11</b>
+												<p>사회복지자원봉사단체 보건복지부장관상 <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;보건복지부</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="inner_box">
+									<div class="his_left historyBox">
+										<h3>2002</h3>
+										<ul>
+											<li>
+												<p>가치경영대상 최우수기업상 (건설부문) <br>주관기관&nbsp;&nbsp;&nbsp;&nbsp;한국능률협회 매니지먼트</p>
+												<b>06</b>
+											</li>
+										</ul>
+									</div>
+									<div class="his_right historyBox mt_90"></div>
+								</div>
+							</div>
+						</div>
+						<!--//수상-->
+					</div>
+				</div>
+				<!--//awards_history-->
+			</div>
+			<!--//housing_content-->
+		</div>
+		<!--//housing_wrap-->
+		<!--footer-->
+		<div class="section" id="section6">
+			<div class="footer_content">
+				<div class="topSection">
+					<div class="inner">
+						<div class="leftBox">
+							<h2>RECRUITMEN <br>INFORMATION</h2>
+							<p>기술과 지식만 갖춘 인재는 신세계가 원하는 인재가 아닙니다.</p>
+							<div class="sns">
+								<ul>
+									<li><a href="#"><img src="../../image/main/ins.png" alt="ins"></a></li>
+									<li><a href="#"><img src="../../image/main/face.png" alt="face"></a></li>
+									<li><a href="#"><img src="../../image/main/naver.png" alt="naver"></a></li>
+									<li><a href="#"><img src="../../image/main/youtube.png" alt="youtube"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="rightBox">
+							<div class="sch_box">
+								<form action="">
+									<h2>현재 2개의 채용이 진행 중 입니다.</h2>
+									<div class="form_box">
+										<div class="input_txt">
+											<input type="text" id="" name="" placeholder="검색어를 입력하세요.">
+										</div>
+										<div class="input_btn">
+											<button type="submit"></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottomSection footer1">
+					<div class="inner">
+						<div class="TopSection">
+							<h1><a href="#"><img src="../../image/logo2_6.png" alt="logo2_6"></a></h1>
+							<div class="txt">
+								<div class="txtbox">
+									<p><a href="#">회사소개</a></p>
+									<ul>
+										<li><a href="#">인사말</a></li>
+										<li><a href="#">비전&경영이념</a></li>
+										<li><a href="#">연혁</a></li>
+										<li><a href="#">미래성장 연구소</a></li>
+										<li><a href="#">오시는길</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">사업분야</a></p>
+									<ul>
+										<li><a href="#">주거시설</a></li>
+										<li><a href="#">건축시설</a></li>
+										<li><a href="#">토목시설</a></li>
+										<li><a href="#">레저사업</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">지속가능경영</a></p>
+									<ul>
+										<li><a href="#">개요</a></li>
+										<li><a href="#">투명경영</a></li>
+										<li><a href="#">사회공헌</a></li>
+										<li><a href="#">품질경영</a></li>
+										<li><a href="#">안전보건경영</a></li>
+										<li><a href="#">친환경경영</a></li>
+										<li><a href="#">동반성장</a></li>
+										<li><a href="#">고객상담실</a></li>
+										<li><a href="#">제보</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">정보센터</a></p>
+									<ul>
+										<li><a href="#">뉴스</a></li>
+										<li><a href="#">수상</a></li>
+										<li><a href="#">CI & BI</a></li>
+										<li><a href="#">투자정보</a></li>
+										<li><a href="#">채용</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="FamilySite">
+								<div class="family_box">
+									<ul>
+										<li><a href="#">신세계그룹 인사이드</a></li>
+										<li><a href="#">신세계백화점</a></li>
+										<li><a href="#">이마트</a></li>
+										<li><a href="#">신세계 사이먼</a></li>
+										<li><a href="#">이마트 에브리데이</a></li>
+										<li><a href="#">신세계디에프</a></li>
+										<li><a href="#">신세계TV쇼핑</a></li>
+										<li><a href="#">이마트24</a></li>
+										<li><a href="#">신세계프라퍼티</a></li>
+										<li><a href="#">SSG.COM</a></li>
+										<li><a href="#">신세계센트럴시티</a></li>
+										<li><a href="#">신세계 푸드</a></li>
+										<li><a href="#">조선호텔앤리조트</a></li>
+										<li><a href="#">스타벅스커피 코리아</a></li>
+										<li><a href="#">신세계엘앤비</a></li>
+										<li><a href="#">신세계인터내셔날</a></li>
+										<li><a href="#">신세계까사</a></li>
+										<li><a href="#">신세계아이엔씨</a></li>
+										<li><a href="#">시그나이트파트너스</a></li>
+										<li><a href="#">SSG 랜더스</a></li>
+									</ul>
+								</div>
+								<div class="family_btn">FAMILY SITE &nbsp <img src="../../image/main/family_arrowD.png" alt="family_arrowD"></div>
+							</div>
+						</div>
+						<div class="BottomSection">
+							<ul>
+								<li><a href="#">빌리브</a></li>
+								<li><a href="#">자유CC</a></li>
+								<li><a href="#">트리니티클럽</a></li>
+								<li><a href="#">아쿠아필드</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">영상정보처리기기 운영 및 관리 방침</a></li>
+								<li><a href="#">법적고지</a></li>
+								<li><a href="#">고객상담</a></li>
+								<li class="last"><a href="#">신세계건설 신문고</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//footer-->
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js"></script>
+    <!--full js 바디 안에-->
+	<script src="../../js/main_script.js" type="text/JavaScript"></script>
+ </body>
+</html>

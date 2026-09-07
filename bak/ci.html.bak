@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.../../css/4.1.1/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<!-- Add the slick css-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Add the js-->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/JavaScript" src="../../js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//gnb
+			$('#gnb').slicknav();
+			$("#gnb .head").click(function(){
+				$(this).css("color","#ffcc00").next(".mu_list").slideToggle(300).siblings(".mu_list").slideUp(300);
+				$(this).siblings("#gnb ,head").css("color","#fff");
+			});
+			// 대메뉴에서 특정 버튼에 마우스온할때
+			$("#gnb > li > a").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+				$('#gnb > li > ul').slideDown('fast');
+				$("#smenu_bar").slideDown();
+				$("header").addClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo2_6.png");
+				$(".nav-list > li > a").css("color","#000");
+			});
+			$(".nav-list > li.in_menu05").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/globalRed.png");
+			});
+
+			// 메뉴에서 마우스가 빠져나가면 메뉴를 닫는다
+			$(".nav").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global.png");
+				$('#gnb > li > ul').fadeOut('fast');
+				$('#smenu_bar').fadeOut('fast');
+				$("header").removeClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo1.png");
+				$(".nav-list > li > a").css("color","#fff");
+			});
+			$(".nav-list > li.in_menu05").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+			});
+			$(".slicknav_menu").click(function(){ 
+				$('header').css("background","#000");
+				$(".slicknav_menu").click(function(){
+					$('header').css("background","none");
+				});
+			});
+			//FamilySite
+			$(".family_btn").click(function(){
+				if($(".family_box").css("display")=="none"){
+					$(".family_box").slideDown();
+					$(".family_btn img").attr("src","../../image/main/family_arrowA.png");
+					$(".family_btn").css({
+						border:"1px solid #db0b11",
+					});
+				}else{
+					$(".family_box").slideUp();
+					$(".family_btn img").attr("src","../../image/main/family_arrowD.png");
+					$(".family_btn").css({
+						border:"1px solid #c5c5c5",
+					});
+				}
+			});
+			//buttontab
+			$(".buttontab_btn").click(function(){
+				if($(".buttontab_box").css("display")=="none"){
+					$(".buttontab_box").slideDown();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowA.png");
+				}else{
+					$(".buttontab_box").slideUp();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowD.png");
+				}
+			});
+		});
+	</script>
+ </head>
+ <body id="main">
+	<div id="wrap">
+	    <!--header-->
+		<header>
+			<!-- nav -->
+			<nav class="nav">
+				<div class="inner_nav">
+					<h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1>
+
+					<ul class="nav-list" id="gnb">
+						<li class="in_menu01 head"><a href="#">회사소개</a>
+							<ul>
+								<li><a href="../company/CEO.html">인사말</a></li>
+								<li><a href="../company/vision.html">비전&경영이념</a></li>
+								<li><a href="ci.html">연혁</a></li>
+								<li><a href="../csr/csr.html">미래성장 연구소</a></li>
+								<li><a href="../csr/management.html">오시는길</a></li>
+							</ul>
+						</li>
+						<li class="in_menu02 head"><a href="#">사업분야</a>
+							<ul>
+								<li><a href="../business/housing.html">주거시설</a></li>
+								<li><a href="news.html">건축시설</a></li>
+								<li><a href="awards.html">토목시설</a></li>
+								<li><a href="ci.html">레저사업</a></li>
+							</ul>
+						</li>
+						<li class="in_menu03 head"><a href="#">지속가능경영</a>
+							<ul>
+								<li><a href="../csr/csr.html">개요</a></li>
+								<li><a href="../csr/management.html">투명경영</a></li>
+								<li><a href="../business/riverent.html">사회공헌</a></li>
+								<li><a href="../company/vision.html">품질경영</a></li>
+								<li><a href="../company/CEO.html">안전보건경영</a></li>
+							</ul>
+						</li>
+						<li class="in_menu04 head"><a href="#">정보센터</a>
+							<ul>
+								<li><a href="news.html">뉴스</a></li>
+								<li><a href="awards.html">수상</a></li>
+								<li><a href="ci.html">CI&BI</a></li>
+								<li><a href="../business/riverent.html">투자정보</a></li>
+								<li><a href="awards.html">채용</a></li>
+							</ul>
+						</li>
+						<li class="in_menu05 head"><a href="#"><span><img src="../../image/main/global.png" alt="global"></span>&nbsp;&nbsp;ENG</a>
+							<ul>
+								<li><a href="../company/vision.html">KR</a></li>
+								<li><a href="news.html">EN</a></li>
+								<li><a href="../csr/csr.html">CN</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="smenu_bar"></div>
+			</nav>
+			<!-- //nav -->
+			<!-- mobile_menu -->
+			<div id="mobile_menu"><h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1></div>
+			<!-- //mobile_menu -->
+		</header>
+		<!--//header-->
+		<!--ci_visual-->
+		<div class="ci_visual">
+			<div class="ci_visual_inner inner">
+				<div class="txtBox">
+					<h2>CI & BI</h2>
+				</div>
+			</div>
+		</div>
+		<!--//ci_visual-->
+		<!--ci_wrap-->
+		<div class="ci_wrap">
+			<!--sub_tab-->
+			<div class="sub_tab">
+				<div class="tab">
+					<div class="tab_inner inner">
+						<h2>INFORMATION</h2>
+						<div class="tab_gnb">
+							<ul>
+								<li><a href="news.html">뉴스</a></li>
+								<li><a href="awards.html">수상</a></li>
+								<li class="active"><a href="ci.html">CI & BI</a></li>
+								<li><a href="bi.html">투자정보</a></li>
+								<li><a href="news.html">채용</a></li>
+							</ul>
+						</div>
+						<!--1000tab-->
+						<div class="buttontab">
+							<div class="buttontab_box business_box">
+								<ul>
+									<li><a href="news.html">뉴스</a></li>
+									<li><a href="news.html">뉴스</a></li>
+									<li><a href="awards.html">수상</a></li>
+									<li class="active"><a href="ci.html">CI & BI</a></li>
+									<li><a href="bi.html">투자정보</a></li>
+									<li><a href="news.html">채용</a></li>
+								</ul>
+							</div>
+							<div class="buttontab_btn"><p>CI & BI&nbsp&nbsp <img src="../../image/tabArrowD.png" alt="tabArrowD"></p></div>
+						</div>
+						<!--//1000tab-->
+					</div>
+				</div>
+			</div>
+			<!--//sub_tab-->
+			<!--ci_content-->
+			<div class="ci_content inner">
+				<!--ci_tabs-->
+				<div class="housing_building">
+					<ul class="tabs">
+						<li class="active" rel="tab1" onclick="location.href='ci.html'">CI</li>
+						<li rel="tab2" onclick="location.href='ci.html'">BI</li>
+					</ul>
+				</div>
+				<!--//ci_tabs-->
+				<!--ci_section1-->
+				<div class="ci_section1">
+					<div class="ci_section1_inner">
+						<div class="imgBox">
+							<p><img src="../../image/information/logobox.jpg" alt="logobox"></p>
+						</div>
+						<div class="txtBox">
+							<h2>SYMBOL</h2>
+							<p>보는이에게 행복을 주는 ‘꽃’을 모티브로 만들어졌습니다.</p>
+							<div class="stxt">
+								<h2>01</h2>
+								<p><b>활짝 피어있는 모양</b> <br>고객을 행복하게 하는 서비스와 가치를 형상화 한 것입니다.</p>
+							</div>
+							<div class="stxt">
+								<h2>02</h2>
+								<p><b>강렬하고 밝은 붉은색</b> <br>고객과 사회를 위한 신세계의 충심을 뜻하고 있습니다.</p>
+							</div>
+							<div class="stxt">
+								<h2>03</h2>
+								<p><b>일곱장 낱낱의 꽃잎</b> <br>고객 한분 한분의 개성을 중시하고 정성을 다하겠다는 의지입니다.</p>
+							</div>
+						</div>
+					</div>
+					<div class="btn">
+						<p>JPG DOWN&nbsp;&nbsp;&nbsp;<img src="../../image/information/down.png" alt="down"></p>
+						<p>AI DOWN&nbsp;&nbsp;&nbsp;<img src="../../image/information/down.png" alt="down"></p>
+					</div>
+				</div>
+				<!--//ci_section1-->
+				<!--ci_section2-->
+				<div class="ci_section2">
+					<div class="ci_section2_inner">
+						<h2>SIGNATURE</h2>
+						<div class="Box">
+							<p>신세계 건설 CI의 마크와 로고는 그 간격과 크기의 조합을 아주 정교하게 연구하여 배치한 것으로 간격 조정은 불가하며 전체 축소 또는 확대를 원칙으로 합니다.</p>
+							<div class="imgBox">
+								<h2>BASIC</h2>
+								<p><img src="../../image/information/ci_section2img1.jpg" alt="ci_section2img1"></p>
+							</div>
+							<div class="imgBox">
+								<h2>COMBINATION</h2>
+								<p><img src="../../image/information/ci_section2img2.jpg" alt="ci_section2img2"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//ci_section2-->
+				<!--ci_section3-->
+				<div class="ci_section3">
+					<div class="ci_section3_inner">
+						<h2>SIGNATURE</h2>
+						<div class="maincolor">
+							<div class="box">
+								<div class="minibox">
+									<h2>SHINSEGAE COLOR I</h2>
+									<p>C10 M100 Y100<br>PANTONE 485C<br>시트칼라 : 현대시트 HD133</p><br>
+								</div>
+							</div>
+							<div class="box">
+								<div class="minibox gray">
+									<h2>SHINSEGAE COLOR I</h2>
+									<p>C10 M100 Y100<br>PANTONE 485C<br>시트칼라 : 현대시트 HD133</p><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//ci_section3-->
+				<!--ci_section4-->
+				<div class="ci_section4">
+					<div class="ci_section4_inner">
+						<h2>BACKGROUND</h2>
+						<div class="background_wrap">
+							<div class="Box">
+								<div class="colorBox"><img src="../../image/information/colorbox1.png" alt="colorbox1"></div>
+								<div class="txtBox">
+									<p><b>바탕</b>WHITE</p>
+									<p><b>꽃마크</b>PANTONE485C</p>
+									<p><b>로고</b>PANTONE431C</p>
+								</div>
+							</div>
+							<div class="Box">
+								<div class="colorBox color1"><img src="../../image/information/colorbox2.png" alt="colorbox2"></div>
+								<div class="txtBox">
+									<p><b>바탕</b>DEEP BLACK (C50 M50 Y50 K100)</p>
+									<p><b>꽃마크</b>PANTONE485C</p>
+									<p><b>로고</b>WHITE</p>
+								</div>
+							</div>
+							<div class="Box">
+								<div class="colorBox color2"><img src="../../image/information/colorbox3.png" alt="colorbox3"></div>
+								<div class="txtBox">
+									<p><b>바탕</b>PANTONE485C</p>
+									<p><b>꽃마크</b>WHITE</p>
+									<p><b>로고</b>BLACK</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//ci_section4-->
+				<!--ci_section5-->
+				<div class="ci_section5">
+					<div class="ci_section5_inner">
+						<h2>BLACK AND <br>WHITE MEDIA</h2>
+						<div class="blackwhite_wrap">
+							<div class="Box">
+								<div class="colorBox"><img src="../../image/information/blackwhite1.jpg" alt="blackwhite1"></div>
+								<div class="txtBox">
+									<p>마크, 로고 모두 같은 톤으로 사용</p>
+									<p>BLACK 100%</p>
+								</div>
+							</div>
+							<div class="Box">
+								<div class="colorBox color2"><img src="../../image/information/blackwhite2.jpg" alt="blackwhite2"></div>
+								<div class="txtBox">
+									<p>마크, 로고 모두 같은 톤으로 사용</p>
+									<p>BLACK 60%(전체 회색 음영톤이 필요할 때만)</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//ci_section5-->
+			</div>
+			<!--//ci_content-->
+		</div>
+		<!--//ci_wrap-->
+		<!--footer-->
+		<div class="section" id="section6">
+			<div class="footer_content">
+				<div class="topSection">
+					<div class="inner">
+						<div class="leftBox">
+							<h2>RECRUITMEN <br>INFORMATION</h2>
+							<p>기술과 지식만 갖춘 인재는 신세계가 원하는 인재가 아닙니다.</p>
+							<div class="sns">
+								<ul>
+									<li><a href="#"><img src="../../image/main/ins.png" alt="ins"></a></li>
+									<li><a href="#"><img src="../../image/main/face.png" alt="face"></a></li>
+									<li><a href="#"><img src="../../image/main/naver.png" alt="naver"></a></li>
+									<li><a href="#"><img src="../../image/main/youtube.png" alt="youtube"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="rightBox">
+							<div class="sch_box">
+								<form action="">
+									<h2>현재 2개의 채용이 진행 중 입니다.</h2>
+									<div class="form_box">
+										<div class="input_txt">
+											<input type="text" id="" name="" placeholder="검색어를 입력하세요.">
+										</div>
+										<div class="input_btn">
+											<button type="submit"></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottomSection footer1">
+					<div class="inner">
+						<div class="TopSection">
+							<h1><a href="#"><img src="../../image/logo2_6.png" alt="logo2_6"></a></h1>
+							<div class="txt">
+								<div class="txtbox">
+									<p><a href="#">회사소개</a></p>
+									<ul>
+										<li><a href="#">인사말</a></li>
+										<li><a href="#">비전&경영이념</a></li>
+										<li><a href="#">연혁</a></li>
+										<li><a href="#">미래성장 연구소</a></li>
+										<li><a href="#">오시는길</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">사업분야</a></p>
+									<ul>
+										<li><a href="#">주거시설</a></li>
+										<li><a href="#">건축시설</a></li>
+										<li><a href="#">토목시설</a></li>
+										<li><a href="#">레저사업</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">지속가능경영</a></p>
+									<ul>
+										<li><a href="#">개요</a></li>
+										<li><a href="#">투명경영</a></li>
+										<li><a href="#">사회공헌</a></li>
+										<li><a href="#">품질경영</a></li>
+										<li><a href="#">안전보건경영</a></li>
+										<li><a href="#">친환경경영</a></li>
+										<li><a href="#">동반성장</a></li>
+										<li><a href="#">고객상담실</a></li>
+										<li><a href="#">제보</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">정보센터</a></p>
+									<ul>
+										<li><a href="#">뉴스</a></li>
+										<li><a href="#">수상</a></li>
+										<li><a href="#">CI & BI</a></li>
+										<li><a href="#">투자정보</a></li>
+										<li><a href="#">채용</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="FamilySite">
+								<div class="family_box">
+									<ul>
+										<li><a href="#">신세계그룹 인사이드</a></li>
+										<li><a href="#">신세계백화점</a></li>
+										<li><a href="#">이마트</a></li>
+										<li><a href="#">신세계 사이먼</a></li>
+										<li><a href="#">이마트 에브리데이</a></li>
+										<li><a href="#">신세계디에프</a></li>
+										<li><a href="#">신세계TV쇼핑</a></li>
+										<li><a href="#">이마트24</a></li>
+										<li><a href="#">신세계프라퍼티</a></li>
+										<li><a href="#">SSG.COM</a></li>
+										<li><a href="#">신세계센트럴시티</a></li>
+										<li><a href="#">신세계 푸드</a></li>
+										<li><a href="#">조선호텔앤리조트</a></li>
+										<li><a href="#">스타벅스커피 코리아</a></li>
+										<li><a href="#">신세계엘앤비</a></li>
+										<li><a href="#">신세계인터내셔날</a></li>
+										<li><a href="#">신세계까사</a></li>
+										<li><a href="#">신세계아이엔씨</a></li>
+										<li><a href="#">시그나이트파트너스</a></li>
+										<li><a href="#">SSG 랜더스</a></li>
+									</ul>
+								</div>
+								<div class="family_btn">FAMILY SITE &nbsp <img src="../../image/main/family_arrowD.png" alt="family_arrowD"></div>
+							</div>
+						</div>
+						<div class="BottomSection">
+							<ul>
+								<li><a href="#">빌리브</a></li>
+								<li><a href="#">자유CC</a></li>
+								<li><a href="#">트리니티클럽</a></li>
+								<li><a href="#">아쿠아필드</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">영상정보처리기기 운영 및 관리 방침</a></li>
+								<li><a href="#">법적고지</a></li>
+								<li><a href="#">고객상담</a></li>
+								<li class="last"><a href="#">신세계건설 신문고</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//footer-->
+	</div>
+ </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <style>
+		.bar-container {
+			display: flex;
+			align-items: flex-end;
+		}
+		.bar {
+			width:50%;
+			height: 1080px;
+			margin: 0;
+			background-color: lightgray;
+			transform-origin: bottom;
+			will-change: transform;
+		}
+		.bar:nth-child(5n+1) { background-color: #f6f6f6; }
+		.bar:nth-child(5n+2) { background-color: #f6f6f6; }
+		.bar:nth-child(5n+3) { background-color: #f6f6f6; }
+		.bar:nth-child(5n+4) { background-color: #f6f6f6; }
+		.bar:nth-child(5n+5) { background-color: #f6f6f6; }
+
+		*{margin:0; padding:0}
+		body,html{height:100%;}
+		body{background:#fff; height:1500px;}
+        .allMenu{display:none; position:fixed; top:0; left:0; z-index:999999999999999; overflow:hidden; width:100%; height:100%;}
+		.allMenu > .bar-container{position:relative;}
+		.mu{position:absolute; top:50px; right:50px; z-index:3;opacity:0}
+		.ham_mu{position:absolute; top:50px; right:50px; z-index:3;}
+	</style>
+ </head>
+ <body>
+	<div class="allMenu">
+	    <div class="mu"><h2 class="closeBtn">CLOSE</h2></div>
+	    <div class="bar-container"></div>
+	</div>
+	<div id="wrap">
+        <h2 class="ham_mu">MENU</h2>
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script>
+	    $(document).ready(function(){
+			const line1 = document.querySelectorAll(".bar-container");
+			const tl = gsap.timeline();
+			const mu = gsap.timeline();
+			const allMenu = gsap.timeline();
+			
+			$(".ham_mu").on("click",function(){
+				$('.allMenu').stop().fadeIn(300);
+				$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+			   
+				const barContainer = document.querySelector('.bar-container');
+				const bars = [];
+				let bar;
+				for (let i = 0; i < 5; i++) {
+					bar = document.createElement('div');
+					bar.classList.add('bar');
+					barContainer.append(bar);
+					bars.push(bar);
+				}
+
+				const line1 = document.querySelectorAll(".bar");
+				const tl = gsap.timeline();
+				tl.fromTo(line1,{opacity:0, scaleY:0.7},{duration:1.2, scaleY:1,opacity:1, delay:0.5, stagger:0.3})
+
+				mu.to('.mu',{duration:0.8, opacity:1,delay:2})
+			});
+
+			$(".closeBtn").on("click",function(){
+				$('html, body').css({'overflow': '', 'height': ''});
+				mu.to('.mu',{duration:0.3, opacity:0,})
+
+				const barContainer = document.querySelector('.bar-container');
+				const bars = [];
+				let bar;
+				for (let i = 0; i < 5; i++) {
+					bar = document.createElement('div');
+					bar.classList.add('bar');
+					bars.push(bar);
+				}
+
+				const line1 = document.querySelectorAll(".bar");
+				const tl = gsap.timeline();
+				tl.fromTo(line1,{opacity:1, scaleY:1},{duration:1.2, scaleY:0.7, opacity:0, delay:0.5, stagger:0.3})
+
+				allMenu.to('.allMenu',{duration:2, display:'none',delay:1})
+				$(".ham_mu").on("click",function(){
+					const barContainer = document.querySelector('.bar-container');
+					barContainer.reset()
+				});
+
+			});
+		});
+    </script>
+ </body>
+</html>

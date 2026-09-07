@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.../../css/4.1.1/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<!-- Add the slick css-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Add the js-->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/JavaScript" src="../../js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//gnb
+			$('#gnb').slicknav();
+			$("#gnb .head").click(function(){
+				$(this).css("color","#ffcc00").next(".mu_list").slideToggle(300).siblings(".mu_list").slideUp(300);
+				$(this).siblings("#gnb ,head").css("color","#fff");
+			});
+			// 대메뉴에서 특정 버튼에 마우스온할때
+			$("#gnb > li > a").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+				$('#gnb > li > ul').slideDown('fast');
+				$("#smenu_bar").slideDown();
+				$("header").addClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo2_6.png");
+				$(".nav-list > li > a").css("color","#000");
+			});
+			$(".nav-list > li.in_menu05").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/globalRed.png");
+			});
+
+			// 메뉴에서 마우스가 빠져나가면 메뉴를 닫는다
+			$(".nav").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global.png");
+				$('#gnb > li > ul').fadeOut('fast');
+				$('#smenu_bar').fadeOut('fast');
+				$("header").removeClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo1.png");
+				$(".nav-list > li > a").css("color","#fff");
+			});
+			$(".nav-list > li.in_menu05").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+			});
+			$(".slicknav_menu").click(function(){ 
+				$('header').css("background","#000");
+				$(".slicknav_menu").click(function(){
+					$('header').css("background","none");
+				});
+			});
+			//FamilySite
+			$(".family_btn").click(function(){
+				if($(".family_box").css("display")=="none"){
+					$(".family_box").slideDown();
+					$(".family_btn img").attr("src","../../image/main/family_arrowA.png");
+					$(".family_btn").css({
+						border:"1px solid #db0b11",
+					});
+				}else{
+					$(".family_box").slideUp();
+					$(".family_btn img").attr("src","../../image/main/family_arrowD.png");
+					$(".family_btn").css({
+						border:"1px solid #c5c5c5",
+					});
+				}
+			});
+		});
+	</script>
+ </head>
+ <body id="main">
+	<div id="wrap">
+	    <!--header-->
+		<header>
+			<!-- nav -->
+			<nav class="nav">
+				<div class="inner_nav">
+					<h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1>
+
+					<ul class="nav-list" id="gnb">
+						<li class="in_menu01 head"><a href="#">회사소개</a>
+							<ul>
+								<li><a href="../company/CEO.html">인사말</a></li>
+								<li><a href="../company/vision.html">비전&경영이념</a></li>
+								<li><a href="../information/ci.html">연혁</a></li>
+								<li><a href="../csr/csr.html">미래성장 연구소</a></li>
+								<li><a href="../csr/management.html">오시는길</a></li>
+							</ul>
+						</li>
+						<li class="in_menu02 head"><a href="#">사업분야</a>
+							<ul>
+								<li><a href="housing.html">주거시설</a></li>
+								<li><a href="../information/news.html">건축시설</a></li>
+								<li><a href="../information/awards.html">토목시설</a></li>
+								<li><a href="../information/ci.html">레저사업</a></li>
+							</ul>
+						</li>
+						<li class="in_menu03 head"><a href="#">지속가능경영</a>
+							<ul>
+								<li><a href="../csr/csr.html">개요</a></li>
+								<li><a href="../csr/management.html">투명경영</a></li>
+								<li><a href="../company/CEO.html">사회공헌</a></li>
+								<li><a href="../company/vision.html">품질경영</a></li>
+								<li><a href="../company/CEO.html">안전보건경영</a></li>
+							</ul>
+						</li>
+						<li class="in_menu04 head"><a href="#">정보센터</a>
+							<ul>
+								<li><a href="../information/news.html">뉴스</a></li>
+								<li><a href="../information/awards.html">수상</a></li>
+								<li><a href="../information/ci.html">CI&BI</a></li>
+								<li><a href="../company/vision.html">투자정보</a></li>
+								<li><a href="../information/awards.html">채용</a></li>
+							</ul>
+						</li>
+						<li class="in_menu05 head"><a href="#"><span><img src="../../image/main/global.png" alt="global"></span>&nbsp;&nbsp;ENG</a>
+							<ul>
+								<li><a href="../company/vision.html">KR</a></li>
+								<li><a href="../information/news.html">EN</a></li>
+								<li><a href="../csr/csr.html">CN</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="smenu_bar"></div>
+			</nav>
+			<!-- //nav -->
+			<!-- mobile_menu -->
+			<div id="mobile_menu"><h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1></div>
+			<!-- //mobile_menu -->
+		</header>
+		<!--//header-->
+		<!--riverent_visual-->
+		<div class="riverent_visual">
+			<div class="riverent_slider">
+				<!--#1-->
+				<div class="_slide riverent riverent1">
+					<div class="slide_content">
+						<div class="slide_content_heading">
+							<div class="txtBox inner">
+								<p>2022-12</p>
+								<h2>VILLIV RIVERENT <br><b>빌리브 리버런트</b></h2>
+								<h3>울산광역시 남구 신정동 22-4번지 일원</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--#2-->
+				<div class="_slide riverent riverent2">
+					<div class="slide_content">
+						<div class="slide_content_heading">
+							<div class="txtBox inner">
+								<p>2022-12</p>
+								<h2>VILLIV RIVERENT <br><b>빌리브 리버런트</b></h2>
+								<h3>울산광역시 남구 신정동 22-4번지 일원</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//riverent_visual-->
+		<!--riverent_content-->
+		<div class="riverent_content">
+		    <!--villiv_riverent-->
+			<div class="villiv_riverent">
+				<div class="villiv_riverent_inner inner">
+					<div class="txtBox">
+						<p><img src="../../image/business/villiv_logo.png" alt="villiv_logo"></p>
+						<p>빌리브 리버런트</p>
+						<p>빌리브 리버런트는 울산 최중심 남구, 그 중에서도 주거 선호도가 가장 높은 태화강변에 위치합니다. <br>월봉초, 강남고 등 울산 남구의 우수한 교육 인프라를 걸어서 누릴 수 있음은 물론 태화강의 쾌적한 자연환경과 대형 쇼핑몰, <br>백화점 같은 뛰어난 생활 인프라까지 단지 인근에 위치하여 명품 주거의 결정체라 할 수 있습니다. 또한 번영교, 강남로, 번영로 등 <br>울산 전역을 편리하게 오갈 수 있는 교통망이 구축되어 있고 전세대 4베이 설계, 독보적인 외관설계로 준공 후에는 지역을 <br>대표하는 랜드마크로서 자리매김 할 것으로 기대됩니다.</p>
+					</div>
+				</div>
+			</div>
+			<!--//villiv_riverent-->
+			<!--villiv_location-->
+			<div class="villiv_location">
+				<div class="villiv_location_inner">
+					<div class="imgBox"><p><img src="../../image/business/villiv_locationImg.jpg" alt="villiv_locationImg"></p></div>
+					<div class="txtBox">
+						<h2 class="title">VILLIV LOCATION</h2>
+						<h3>울산 남구의 중심에서 만나는 <br><b>신세계적 프리미엄</b></h3>
+						<p>태화강과 맞닿은 힐링만족 <b>자연인프라</b> <br>한 걸음으로 즐기는 완성형 <b>생활인프라</b></p>
+					</div>
+				</div>
+			</div>
+			<!--//villiv_location-->
+			<!--building_slider-->
+			<div class="businessBuilding">
+				<div class="businessBuilding_inner">
+					<div class="txtBox">
+						<h2 class="title">주거시설 더보기</h2>
+						<p onclick="location.href='housing.html'">더보기<span><img src="../../image/business/box_arrowB.png" alt="box_arrowB"></span></p>
+					</div>
+					<div class="slider_building">
+						<div class="building_slider">
+							<div class="Box">
+								<p><img src="../../image/business/slider_building1.jpg" alt="slider_building1"></p>
+								<div class="txtBox">
+									<h2>빌리브 하남</h2>
+									<p>2018-11 ~ 2021-01</p>
+								</div>
+							</div>
+							<div class="Box">
+								<p><img src="../../image/business/slider_building2.jpg" alt="slider_building2"></p>
+								<div class="txtBox">
+									<h2>빌리브 명지 듀클래스</h2>
+									<p>2022-02</p>
+								</div>
+							</div>
+							<div class="Box">
+								<p><img src="../../image/business/slider_building3.jpg" alt="slider_building3"></p>
+								<div class="txtBox">
+									<h2>빌리브 센트하이</h2>
+									<p>2022-07</p>
+								</div>
+							</div>
+							<div class="Box">
+								<p><img src="../../image/business/slider_building1.jpg" alt="slider_building1"></p>
+								<div class="txtBox">
+									<h2>빌리브 하남</h2>
+									<p>2018-11 ~ 2021-01</p>
+								</div>
+							</div>
+							<div class="Box">
+								<p><img src="../../image/business/slider_building2.jpg" alt="slider_building2"></p>
+								<div class="txtBox">
+									<h2>빌리브 명지 듀클래스</h2>
+									<p>2022-02</p>
+								</div>
+							</div>
+							<div class="Box">
+								<p><img src="../../image/business/slider_building3.jpg" alt="slider_building3"></p>
+								<div class="txtBox">
+									<h2>빌리브 센트하이</h2>
+									<p>2022-07</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//building_slider-->
+		</div>
+		<!--//riverent_content-->
+		<!--footer-->
+		<div class="section footer_W" id="section6">
+			<div class="footer_content">
+				<div class="topSection">
+					<div class="inner">
+						<div class="leftBox">
+							<h2>RECRUITMEN <br>INFORMATION</h2>
+							<p>기술과 지식만 갖춘 인재는 신세계가 원하는 인재가 아닙니다.</p>
+							<div class="sns">
+								<ul>
+									<li><a href="#"><img src="../../image/main/ins.png" alt="ins"></a></li>
+									<li><a href="#"><img src="../../image/main/face.png" alt="face"></a></li>
+									<li><a href="#"><img src="../../image/main/naver.png" alt="naver"></a></li>
+									<li><a href="#"><img src="../../image/main/youtube.png" alt="youtube"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="rightBox">
+							<div class="sch_box">
+								<form action="">
+									<h2>현재 2개의 채용이 진행 중 입니다.</h2>
+									<div class="form_box">
+										<div class="input_txt">
+											<input type="text" id="" name="" placeholder="검색어를 입력하세요.">
+										</div>
+										<div class="input_btn">
+											<button type="submit"></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottomSection footer1">
+					<div class="inner">
+						<div class="TopSection">
+							<h1><a href="#"><img src="../../image/logo2_6.png" alt="logo2_6"></a></h1>
+							<div class="txt">
+								<div class="txtbox">
+									<p><a href="#">회사소개</a></p>
+									<ul>
+										<li><a href="#">인사말</a></li>
+										<li><a href="#">비전&경영이념</a></li>
+										<li><a href="#">연혁</a></li>
+										<li><a href="#">미래성장 연구소</a></li>
+										<li><a href="#">오시는길</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">사업분야</a></p>
+									<ul>
+										<li><a href="#">주거시설</a></li>
+										<li><a href="#">건축시설</a></li>
+										<li><a href="#">토목시설</a></li>
+										<li><a href="#">레저사업</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">지속가능경영</a></p>
+									<ul>
+										<li><a href="#">개요</a></li>
+										<li><a href="#">투명경영</a></li>
+										<li><a href="#">사회공헌</a></li>
+										<li><a href="#">품질경영</a></li>
+										<li><a href="#">안전보건경영</a></li>
+										<li><a href="#">친환경경영</a></li>
+										<li><a href="#">동반성장</a></li>
+										<li><a href="#">고객상담실</a></li>
+										<li><a href="#">제보</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">정보센터</a></p>
+									<ul>
+										<li><a href="#">뉴스</a></li>
+										<li><a href="#">수상</a></li>
+										<li><a href="#">CI & BI</a></li>
+										<li><a href="#">투자정보</a></li>
+										<li><a href="#">채용</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="FamilySite">
+								<div class="family_box">
+									<ul>
+										<li><a href="#">신세계그룹 인사이드</a></li>
+										<li><a href="#">신세계백화점</a></li>
+										<li><a href="#">이마트</a></li>
+										<li><a href="#">신세계 사이먼</a></li>
+										<li><a href="#">이마트 에브리데이</a></li>
+										<li><a href="#">신세계디에프</a></li>
+										<li><a href="#">신세계TV쇼핑</a></li>
+										<li><a href="#">이마트24</a></li>
+										<li><a href="#">신세계프라퍼티</a></li>
+										<li><a href="#">SSG.COM</a></li>
+										<li><a href="#">신세계센트럴시티</a></li>
+										<li><a href="#">신세계 푸드</a></li>
+										<li><a href="#">조선호텔앤리조트</a></li>
+										<li><a href="#">스타벅스커피 코리아</a></li>
+										<li><a href="#">신세계엘앤비</a></li>
+										<li><a href="#">신세계인터내셔날</a></li>
+										<li><a href="#">신세계까사</a></li>
+										<li><a href="#">신세계아이엔씨</a></li>
+										<li><a href="#">시그나이트파트너스</a></li>
+										<li><a href="#">SSG 랜더스</a></li>
+									</ul>
+								</div>
+								<div class="family_btn">FAMILY SITE &nbsp <img src="../../image/main/family_arrowD.png" alt="family_arrowD"></div>
+							</div>
+						</div>
+						<div class="BottomSection">
+							<ul>
+								<li><a href="#">빌리브</a></li>
+								<li><a href="#">자유CC</a></li>
+								<li><a href="#">트리니티클럽</a></li>
+								<li><a href="#">아쿠아필드</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">영상정보처리기기 운영 및 관리 방침</a></li>
+								<li><a href="#">법적고지</a></li>
+								<li><a href="#">고객상담</a></li>
+								<li class="last"><a href="#">신세계건설 신문고</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//footer-->
+	</div>
+    <!--full js 바디 안에-->
+	<script>
+		$(document).ready(function(){
+			//riverent_slider
+			$(".riverent_slider").slick({
+				autoplay:true,
+				fade:true,
+				autoplaySpeed:5000,
+				arrows:false,
+				dots:false,
+				infinite: true,
+				speed:500,
+				pauseOnHover: false,
+				lazyLoad: "progressive"
+			});
+			//building_slider
+			$(".building_slider").slick({
+				autoplay: true,
+				infinite: true,
+				autoplaySpeed:3000,
+				speed: 1000,
+				slidesToShow : 3,
+				slidesToScroll: 1,
+				dots : false,
+				arrows : false,
+				focusOnSelect: false,
+				pauseOnHover: false,
+				responsive: [
+					{
+						breakpoint: 668,
+						settings: {
+							slidesToShow : 2,
+						}
+					},
+				]
+			});
+		});
+	</script>
+ </body>
+</html>

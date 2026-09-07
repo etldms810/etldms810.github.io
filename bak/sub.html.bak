@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1, minimum-scale=1, maximum-scale=1.75">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- Add the slick css-->
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<!-- Add the js-->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js" type="text/JavaScript"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		$(document).ready(function(){
+			//FamilySite 
+			$(".family_btn").click(function(){
+				if($(".family_box").css("display")=="none"){
+					$(".family_box").slideDown();
+					$(".family_btn img").attr("src","../image/main/family_arrowD.png");
+					$(".family_btn").css({
+						color:"#0090b7",
+						border:"1px solid #7acde3"
+					});
+				}else{
+					$(".family_box").slideUp();
+					$(".family_btn img").attr("src","../image/main/family_arrowA.png");
+					$(".family_btn").css({
+						color:"#636363",
+						border:"1px solid #c5c5c5"
+					});
+				}
+
+			});
+			//검색
+			$(".btn_sch").click(function(){
+				if($(".sch_box").css("display")=="none"){
+					$(".sch_box").slideDown("1000");
+					$(".bg").fadeIn("1000");
+				}
+			});
+			$(".btn_close").click(function(){
+				$(".sch_box").slideUp("1000");
+				$(".bg").fadeOut("1000");
+			});
+			//햄버거
+			$(".ham_btn").click(function(){
+			    $(".mobile_wrap").fadeIn(600);
+			    $(".mobile_wrap .box").fadeIn(600);
+			    $(".gnbBg").fadeIn(600);
+			    $(".mobile_nav").animate({
+				    left:"0"
+			    },600);
+			    $("body").css("overflow","hidden");
+			});
+			$("#close_btn").click(function(){
+			    $(".mobile_wrap").fadeOut(600);
+			    $(".mobile_wrap .box").fadeOut(600);
+			    $(".gnbBg").fadeOut(600);
+			    $(".mobile_nav").animate({
+				    left:"-500px"
+			    },600);
+			    $("body").css("overflow","auto");
+			});
+			$(".mobile_wrap .head").click(function(){
+			    $(this).css("color","#ffcc00").next(".mu_list").slideToggle(600).siblings(".mu_list").slideUp(600);
+			    $(this).siblings(".nav .head").css("color","#474747");
+			});
+		});
+	</script>
+ </head>
+ <body>
+    <div id="wrap">
+	    <!--tell_fix-->
+		<div class="tell_fix"><img src="../image/main/tell_fix.png" alt="tell_fix"></div>
+		<!--//tell_fix-->
+	    <!--sch_box-->
+		<div class="sch_box">
+			<div>
+				<div class="form_box">
+					<form action="">
+						<input type="text" name="" id="" placeholder="검색어를 입력해주세요.">
+						<button><span class="material-icons">search</span></button>
+					</form>
+				</div>
+				<p class="btn_close"><span class="material-icons">close</span></p>
+			</div>
+		</div>
+		<div class="bg"></div>
+		<!--//sch_box-->
+		<!--header-->
+		<header class="inner">
+			<!--left_section-->
+			<div class="left_section">
+				<p class="ham_btn"><a href="#"><img src="../image/main/ham_btn.png" alt="ham_btn"></a></p>
+				<p class="btn_sch"><a href="#"><img src="../image/main/sch_btn.png" alt="sch_btn"></a></p>
+			</div>
+			<!--//left_section-->
+			<!--logo-->
+			<h1><a href="../index.html"><img src="../image/logo.png" alt="logo"></a></h1>
+			<!--//logo-->
+			<!--right_section-->
+			<span><a href="#">로그인</a></span>
+			<!--//right_section-->
+		</header>
+		<!--//header-->
+		<!--nav-->
+		<div class="mobile_wrap">
+			<div class="box">
+				<div class="mobile_nav">
+					<div class="nav">
+						<div class="topsection">
+							<h1><a href="../index.html"><img src="../image/logo.png" alt="logo"></a></h1>
+							<div id="close_btn"><img src="../image/main/button_off.png" alt="닫기"></div>
+						</div>
+						<div class="inner_nav">
+							<div class="head">와이즈캠프 소개</div>
+							<div class="mu_list">
+								<a href="#">와이즈캠프란?</a>
+								<a href="#">와이즈캠프 특징</a>
+								<a href="#">상품 구성</a>
+								<a href="sub.html">학습 관리</a>
+								<a href="#">메타학습 효과</a>
+							</div>
+							<div class="head">학습프로그램</div>
+							<div class="mu_list">
+								<a href="#">메타인지 학습</a>
+								<a href="#">비주얼씽킹 학습</a>
+								<a href="#">교과서 학습</a>
+								<a href="#">프리미엄 학습</a>
+								<a href="#">글뼈 도서관</a>
+								<a href="#">누리와캠</a>
+								<a href="#">와캠 중학</a>
+								<a href="#">AI 서술형 챗봇</a>
+								<a href="#">서술형첨삭</a>
+								<a href="#">화상수업</a>
+							</div>
+							<div class="head">비주얼씽킹 학습</div>
+							<div class="mu_list">
+								<a href="#">개뼈노트</a>
+								<a href="#">말뼈사전</a>
+								<a href="#">교과서 글뼈읽기</a>
+								<a href="#">비주얼씽킹 학습 체험</a>
+							</div>
+							<div class="head">학습자료실</div>
+							<div class="mu_list">
+								<a href="#">교과 학습</a>
+								<a href="#">개뼈노트</a>
+								<a href="#">시험대비</a>
+								<a href="#">프리미엄 학습</a>
+								<a href="#">비주얼씽킹 자료</a>
+								<a href="#">두두 원서도서관</a>
+							</div>
+							<div class="head">토스트</div>
+							<div class="mu_list">
+								<a href="#">초등엄마백서</a>
+								<a href="#">맘앤톡 칼럼</a>
+								<a href="#">왁튜브</a>
+								<a href="#">진단 및 검사</a>
+							</div>
+							<div class="head">소식</div>
+							<div class="mu_list">
+								<a href="#">공지사항</a>
+								<a href="#">업데이트 소식</a>
+								<a href="#">이벤트</a>
+								<a href="#">학습 후기</a>
+								<a href="#">와캠 히어로즈</a>
+							</div>
+						</div>
+                        <div class="bottom_btn btn_1">
+							<p><a href="#">고객센터</a></p>
+							<p><a href="#">나의정보</a></p>
+                        </div>
+						<div class="bottom_btn btn_2">
+							<p><a href="#">로그인</a></p>
+							<p><a href="#">회원가입</a></p>
+                        </div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="gnbBg"></div>
+		</div>
+		<!--//nav-->
+		<!--sub_mainVis-->
+		<div class="sub_mainVis">
+			<div class="subVis_inner inner">
+				<div class="main_title">
+					<h2>와이즈캠프 <b>전문 선생님 학습관리</b></h2>
+					<h3>남다른 우리 아이에게<br>꼭 맞는 남다른 <b>학습 관리</b></h3>
+					<p>와이즈캠프의 초등교육 노하우를 바탕으로 1명의<br>아이에게  5명의 전문 선생님이 밀착 관리하며 학습의 방향과<br>고민을 해결해주어 공부에 자신감을 갖도록 합니다.</p>
+				</div>
+				<p><img src="../image/sub_child.png" alt="Subchild"></p>
+				<span><img src="../image/sub_spakle.png" alt="Subspakle"></span>
+			</div>
+		</div>
+		<!--//sub_mainVis-->
+		<!--sub_content-->
+		<div class="sub_content">
+			<!--SubTeachers-->
+			<div class="SubTeachers">
+				<div class="SubTeach_inner">
+					<div class="subteach_slider">
+						<div class="items" onclick="">
+							<p>담임선생님</p>
+							<h2>개인별 맞춤 학습관리 교육 전문가</h2>
+							<div class="box">
+								<span><img src="../image/subteach1.jpg" alt="subteach"></span>
+								<div>
+								    <p>맞춤 시간표를 설계하고 아이의 성향과 학습 현황을 꼼꼼하게 체크하여 자기주도 학습 습관을 완성시켜줍니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="items" onclick="">
+							<p>강의 선생님</p>
+							<h2>과목별 전문 선생님</h2>
+							<div class="box">
+								<span><img src="../image/subteach2.jpg" alt="subteach"></span>
+								<div>
+								    <p>과목별 전문 선생님이 교과 내용을 쉽게 알려줍니다. 또한 다양한 문제풀이, 단원별 정리까지 도와줍니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="items" onclick="">
+							<p>첨삭 선생님</p>
+							<h2>월 2회 주요과목 개인별 첨삭지도</h2>
+							<div class="box">
+								<span><img src="../image/subteach3.jpg" alt="subteach"></span>
+								<div>
+								    <p>첨삭 선생님들의 체계적인 채점 기준을 바탕으로 다양한 유형의 서술형 평가를 완벽히 대비할 수 있습니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="items" onclick="">
+							<p>숙제 선생님</p>
+							<h2>숙제나 학습 중 모든 궁금증 해결</h2>
+							<div class="box">
+								<span><img src="../image/subteach4.jpg" alt="subteach"></span>
+								<div>
+								    <p>주요과목은 물론 그 외 기타 궁금증까지 숙제나 학습 중 생기는 모든 궁금증을 해결해 주는 숙제 선생님입니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="items" onclick="">
+							<p>상담 선생님</p>
+							<h2>와이즈캠프와의 첫 만남</h2>
+							<div class="box">
+								<span><img src="../image/subteach5.jpg" alt="subteach"></span>
+								<div>
+									<p>와이즈캠프 학습에 잘 안착될 수 있도록 도와주는 상담(코칭)선생님입니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//SubTeachers-->
+			<!--SubParents-->
+			<div class="SubParents">
+				<div class="SubParents_inner inner">
+					<div class="SubParents_Txt">
+						<h2>모바일로 편리하게 확인하는 우리 아이의 학습 현황!</h2>
+						<h3>와이즈캠프 학부모 앱</h3>
+						<p>자녀의 학습 현황, 결과, 담임 선생님 쪽지,  알림<br>등을 언제 어디서든 바로 확인할 수 있습니다.</p>
+						<span><a href="#">다운하러가기</a></span>
+					</div>
+					<p><img src="../image/SubParents_phone.png" alt="subphone"></p>
+				</div>
+			</div>
+			<!--//SubParents-->
+			<!--SubApp-->
+			<div class="SubApp">
+				<div class="SubApp_inner inner">
+					<div class="box Box1">
+						<p><img src="../image/sub_cat.png" alt="subcat"></p>
+						<div class="box_txt">
+							<h2>사회 과학 요점</h2>
+							<p>이해를 바탕으로 암기가 필수인 사회와 과학! 이동 및 여유시간에 간편하게 암기!</p>
+						</div>
+					</div>
+					<div class="box Box2">
+						<p><img src="../image/sub_dog.png" alt="subdog"></p>
+						<div class="box_txt">
+							<h2>교과서 받아쓰기</h2>
+							<p>무료 제공되는 교과서 전문 성우 사운드로 가정에서도 정확하고 꾸준한 훈련 가능!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//SubApp-->
+		</div>
+		<!--//sub_content-->
+		<!--footer-->
+		<footer>
+			<div class="inner_footer">
+			    <!--footerTop-->
+			    <div class="footerTop inner">
+					<p><img src="../image/main/visang_logo.png" alt="visang_logo"></p>
+					<div class="top_txt">
+						<ul>
+							<li><a href="#">회사소개</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">홍보매니저&에듀플래너 모집</a></li>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">선생님 모집</a></li>
+						</ul>
+					</div>
+					<div class="FamilySite">
+						<div class="family_box">
+							<ul>
+								<li><a href="#">출판교육서비스</a></li>
+								<li><a href="#">에듀플랫폼</a></li>
+								<li><a href="#">교원연수/학부모교육</a></li>
+								<li><a href="#">인쇄시설</a></li>
+								<li><a href="#">유아교육</a></li>
+								<li><a href="#">영어교육</a></li>
+								<li><a href="#">학원/입시정보</a></li>
+								<li><a href="#">교육문화체험</a></li>
+							</ul>
+						</div>
+						<div class="family_btn">FAMILY SITE &nbsp <img src="../image/main/family_arrowD.png" alt="family_arrowD"></div>
+					</div>
+			    </div>
+				<!--//footerTop-->
+				<!--footerBottom-->
+				<div class="footerBottom inner">
+					<p>
+					    ㈜ 비상교육    대표이사 : 양태회    대표전화 1588-6563    사업자등록번호 119-85-22853<br>학원설립 운영등록번호 : 제 5609호 와이즈캠프닷컴원격학원 (정보조회) 신고기관 : 서울특별시 남부교육청<br>러닝서울시 구로구 디지털로33길 48 대륭포스트타워 7차 20층    사이트명 : 와이즈캠프닷컴<br>광고/제휴문의 : wisecamp@visang.com    COPYRIGHT©(주)비상교육, ALL RIGHTS RESERVED.<br>통신판매업 신고번호 2013-서울구로-0373호
+					</p>
+					<div class="sns_btn">
+						<div>
+							<ul>
+								<li><a href="#"><img src="../image/main/sns_icon1.png" alt="sns_icon1"></a></li>
+								<li><a href="#"><img src="../image/main/sns_icon2.png" alt="sns_icon2"></a></li>
+								<li><a href="#"><img src="../image/main/sns_icon3.png" alt="sns_icon3"></a></li>
+								<li><a href="#"><img src="../image/main/sns_icon4.png" alt="sns_icon4"></a></li>
+								<li><a href="#"><img src="../image/main/sns_icon5.png" alt="sns_icon5"></a></li>
+							</ul>
+						</div>
+						<span><img src="../image/main/isms.png" alt="isms"></span>
+					</div>
+				</div>
+				<!--//footerBottom-->
+			<div>
+		</footer>
+		<!--//footer-->
+    </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+ <script src="https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js"></script>
+ <script>
+	$(document).ready(function(){
+		//subteach_slider
+		$(".subteach_slider").slick({
+			autoplay: true,
+			infinite: true,
+			slidesToShow : 1,
+			slidesToScroll: 1,
+			dots : true,
+			arrows : false,
+			centerMode:true,
+			centerPadding : '100px',
+			responsive: [
+				    {
+						breakpoint: 481,
+						settings: {
+							centerPadding: '70px',
+						}
+				    },
+                    {
+						breakpoint: 431,
+						settings: {
+							centerPadding: '50px',
+						}
+				    },
+				]
+		});
+		AOS.init({
+				easing: 'ease-out-back',
+			});
+	});
+ </script>
+ </body>
+</html>

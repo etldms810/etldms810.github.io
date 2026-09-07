@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+	<link rel="stylesheet" href="../css/nav.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js" type="text/JavaScript"></script>
+	<style>
+       *{margin:0; padding:0;}
+		*{box-sizing:border-box;}
+		html,body{height:100%;}
+		body {background:#fff;overflow-x:hidden;}
+		img, fieldset, iframe {border:0 none; }
+		address, caption, cite, code, dfn, em, strong, th, var { font-style : normal; font-weight : normal; }
+		ul,li{list-style:none}
+		img{display:block;}
+        
+		header{position:fixed; top:0; left:0; width:100%; z-index:9999}
+  </style>
+ </head>
+ <body>
+    <div id="wrap">
+		<!--header(s)-->
+		<header>
+			<!-- nav -->
+			<div class = "main-wrapper">
+				<nav class = "navbar">
+					<div class = "brand-and-icon">
+						<a href = "../index.html" class = "navbar-brand"><img src="../image/logoblack.png" alt="logoblack"></a>
+						<button type = "button" class = "navbar-toggler"><i class = "fas fa-bars"></i></button>
+					</div>
+					<div class = "navbar-collapse">
+						<!--nav-->
+						<ul class = "navbar-nav">
+							<li>
+								<a href = "#" class = "menu-link">카테고리</a>
+								<div class = "sub-menu">
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<ul>
+											<li><a href = "detail.html">전체보기</a></li>
+											<li><a href = "list.html">클렌징</a></li>
+											<li><a href = "login.html">스킨케어</a></li>
+											<li><a href = "detail.html">마스크/팩</a></li>
+											<li><a href = "list.html">베이스 메이크업</a></li>
+										</ul>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<ul>
+											<li><a href = "login.html">페이스 메이크업</a></li>
+											<li><a href = "detail.html">립 메이크업</a></li>
+											<li><a href = "list.html">아이 메이크업</a></li>
+											<li><a href = "login.html">선케어</a></li>
+											<li><a href = "detail.html">미용소품</a></li>
+										</ul>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<h2>피부 고민별로 골라 쓰는 <b>맞춤 프라이머</b></h2>
+										<button type = "button" class = "btn">shop here</button>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										 <img src = "image/nav3.png" alt = "product image">
+									</div>
+								<!-- end of item -->
+								</div>
+							</li>
+							<li>
+								<a href = "#" class = "menu-link">피부고민별</a>
+								<div class = "sub-menu">
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<ul>
+											<li><a href = "list.html">수분/보습</a></li>
+											<li><a href = "login.html">탄력/주름개선</a></li>
+											<li><a href = "detail.html">민감/트러블</a></li>
+											<li><a href = "list.html">모공/피지</a></li>
+										</ul>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<ul>
+											<li><a href = "login.html">미백/톤개선</a></li>
+											<li><a href = "detail.html">영양</a></li>
+											<li><a href = "list.html">각질/결개선</a></li>
+											<li><a href = "login.html">진정/수딩</a></li>
+										</ul>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										<h2>피부 고민별로 골라 쓰는 <b>맞춤 프라이머</b></h2>
+										<button type = "button" class = "btn">shop here</button>
+									</div>
+									<!-- end of item -->
+									<!-- item -->
+									<div class = "sub-menu-item">
+										 <img src = "image/nav2.png" alt = "product image">
+									</div>
+								<!-- end of item -->
+								</div>
+							</li>
+							<li class="moreX">
+							  <a href = "detail.html">베스트</a>
+							</li>
+							<li class="moreX">
+							  <a href = "list.html">이벤트</a>
+							</li>
+							<li class="moreX">
+							  <a href = "login.html">세일 ON</a>
+							</li>
+						</ul>
+						<!--//nav-->
+					</div>
+					<div class="logBox">
+						<ul>
+							<li><a href="#"><img src="../image/headerLogin.png" alt="headerLogin"></a></li>
+							<li><a href="#"><img src="../image/headerBag.png" alt="headerBag"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<!-- //nav -->
+		</header>
+		<!--header(e)-->
+		<a href="detail.html" >
+		<div style="position:relative; width:100%;">
+			<div style="position:absolute; width:1920px; left:50%; margin-left:-960px; padding-top:100px">
+				<img src="../image/detail/02.jpg" width="1920px">
+			</div>
+		</div>
+    </div>
+	<script type="text/JavaScript" src="../js/nav.js"></script>
+	<script src="../js/main_script.js" type="text/JavaScript"></script>
+ </body>
+</html>

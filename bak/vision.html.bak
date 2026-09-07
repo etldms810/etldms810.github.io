@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.../../css/4.1.1/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<!-- Add the slick css-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Add the js-->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/JavaScript" src="../../js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//gnb
+			$('#gnb').slicknav();
+			$("#gnb .head").click(function(){
+				$(this).css("color","#ffcc00").next(".mu_list").slideToggle(300).siblings(".mu_list").slideUp(300);
+				$(this).siblings("#gnb ,head").css("color","#fff");
+			});
+			// 대메뉴에서 특정 버튼에 마우스온할때
+			$("#gnb > li > a").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+				$('#gnb > li > ul').slideDown('fast');
+				$("#smenu_bar").slideDown();
+				$("header").addClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo2_6.png");
+				$(".nav-list > li > a").css("color","#000");
+			});
+			$(".nav-list > li.in_menu05").mouseover(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/globalRed.png");
+			});
+
+			// 메뉴에서 마우스가 빠져나가면 메뉴를 닫는다
+			$(".nav").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global.png");
+				$('#gnb > li > ul').fadeOut('fast');
+				$('#smenu_bar').fadeOut('fast');
+				$("header").removeClass("header_active1");
+				$(".nav h1 img").attr("src","../../image/logo1.png");
+				$(".nav-list > li > a").css("color","#fff");
+			});
+			$(".nav-list > li.in_menu05").mouseleave(function(){
+				$(".nav-list > li.in_menu05 > a span img").attr("src","../../image/main/global43.png");
+			});
+			$(".slicknav_menu").click(function(){ 
+				$('header').css("background","#000");
+				$(".slicknav_menu").click(function(){
+					$('header').css("background","none");
+				});
+			});
+			//FamilySite
+			$(".family_btn").click(function(){
+				if($(".family_box").css("display")=="none"){
+					$(".family_box").slideDown();
+					$(".family_btn img").attr("src","../../image/main/family_arrowA.png");
+					$(".family_btn").css({
+						border:"1px solid #db0b11",
+					});
+				}else{
+					$(".family_box").slideUp();
+					$(".family_btn img").attr("src","../../image/main/family_arrowD.png");
+					$(".family_btn").css({
+						border:"1px solid #c5c5c5",
+					});
+				}
+			});
+			//buttontab
+			$(".buttontab_btn").click(function(){
+				if($(".buttontab_box").css("display")=="none"){
+					$(".buttontab_box").slideDown();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowA.png");
+				}else{
+					$(".buttontab_box").slideUp();
+					$(".buttontab_btn img").attr("src","../../image/tabArrowD.png");
+				}
+			});
+		});
+	</script>
+ </head>
+ <body id="main">
+	<div id="wrap">
+	    <!--header-->
+		<header>
+			<!-- nav -->
+			<nav class="nav">
+				<div class="inner_nav">
+					<h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1>
+
+					<ul class="nav-list" id="gnb">
+						<li class="in_menu01 head"><a href="#">회사소개</a>
+							<ul>
+								<li><a href="CEO.html">인사말</a></li>
+								<li><a href="vision.html">비전&경영이념</a></li>
+								<li><a href="../information/ci.html">연혁</a></li>
+								<li><a href="../csr/csr.html">미래성장 연구소</a></li>
+								<li><a href="../csr/management.html">오시는길</a></li>
+							</ul>
+						</li>
+						<li class="in_menu02 head"><a href="#">사업분야</a>
+							<ul>
+								<li><a href="../business/housing.html">주거시설</a></li>
+								<li><a href="../information/news.html">건축시설</a></li>
+								<li><a href="../information/awards.html">토목시설</a></li>
+								<li><a href="../information/ci.html">레저사업</a></li>
+							</ul>
+						</li>
+						<li class="in_menu03 head"><a href="#">지속가능경영</a>
+							<ul>
+								<li><a href="../csr/csr.html">개요</a></li>
+								<li><a href="../csr/management.html">투명경영</a></li>
+								<li><a href="../business/riverent.html">사회공헌</a></li>
+								<li><a href="vision.html">품질경영</a></li>
+								<li><a href="CEO.html">안전보건경영</a></li>
+							</ul>
+						</li>
+						<li class="in_menu04 head"><a href="#">정보센터</a>
+							<ul>
+								<li><a href="../information/news.html">뉴스</a></li>
+								<li><a href="../information/awards.html">수상</a></li>
+								<li><a href="../information/ci.html">CI&BI</a></li>
+								<li><a href="../business/riverent.html">투자정보</a></li>
+								<li><a href="../information/awards.html">채용</a></li>
+							</ul>
+						</li>
+						<li class="in_menu05 head"><a href="#"><span><img src="../../image/main/global.png" alt="global"></span>&nbsp;&nbsp;ENG</a>
+							<ul>
+								<li><a href="vision.html">KR</a></li>
+								<li><a href="../information/news.html">EN</a></li>
+								<li><a href="../csr/csr.html">CN</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="smenu_bar"></div>
+			</nav>
+			<!-- //nav -->
+			<!-- mobile_menu -->
+			<div id="mobile_menu"><h1><a href="../../index.html"><img src="../../image/logo1.png" alt="logo1"></a></h1></div>
+			<!-- //mobile_menu -->
+		</header>
+		<!--//header-->
+		<!--company_visual-->
+		<div class="company_visual">
+			<div class="companyVis_content bg2">
+				<div class="companyVis_content_inner">
+					<div class="companyVis_txt visionVis_txt inner">
+					    <h2>비전&경영이념</h2>
+						<h3>LIFE CONNECTED <br>BUILDER <br>& DEVELOPER</h3>
+						<p><b>지역사회 발전</b>을 추구하는 가치 창조기업이 되겠습니다.</p>
+					</div>
+				</div>
+				<!--scroll_ani-->
+				<div class="sub_scroll_txt_">
+					<p>SCROLL DOWN</p>
+					<span class="sub_bar"></span>
+				</div>
+				<!--//scroll_ani-->
+			</div>
+		</div>
+		<!--//company_visual-->
+		<!--vision_wrap-->
+		<div class="vision_wrap">
+			<!--sub_tab-->
+			<div class="sub_tab">
+				<div class="tab">
+					<div class="tab_inner inner">
+						<h2>COMPANY</h2>
+						<div class="tab_gnb">
+							<ul>
+								<li><a href="#">인사말</a></li>
+								<li class="active"><a href="#">비전 & 경영이념</a></li>
+								<li><a href="#">연혁</a></li>
+								<li><a href="#">미래성장 연구소</a></li>
+								<li><a href="#">오시는길</a></li>
+							</ul>
+						</div>
+						<!--1000tab-->
+						<div class="buttontab">
+							<div class="buttontab_box">
+								<ul>
+							        <li><a href="#">인사말</a></li>
+									<li><a href="#">인사말</a></li>
+									<li class="active"><a href="#">비전 & 경영이념</a></li>
+									<li><a href="#">연혁</a></li>
+									<li><a href="#">미래성장 연구소</a></li>
+									<li><a href="#">오시는길</a></li>
+								</ul>
+							</div>
+							<div class="buttontab_btn"><p>비전 & 경영이념&nbsp&nbsp <img src="../../image/tabArrowD.png" alt="tabArrowD"></p></div>
+						</div>
+						<!--//1000tab-->
+					</div>
+				</div>
+			</div>
+			<!--//sub_tab-->
+			<!--vision_content-->
+			<div class="vision_content">
+			    <!--vision_builder-->
+				<div class="vision_builder">
+					<div class="vision_builder_inner inner">
+						<div class="txtBox">
+							<h2>LIFE COMMECTED BUILDER & DEVELOPER</h2>
+							<h3>신세계건설 비전 2030</h3>
+							<p>신세계건설은 시공, 개발, 운영 등 건설 전문분야의 서비스를 제공하며 고객의 행복한 라이프 스타일을 선도하는 <br>기업으로 최고의 가치를 추구하는 Developer로 도약하기 위해 주택, 상업시설, 토목, 리모델링, 레져사업 등 <br>사업영역을 확대해 새로운 가치를 창출해 나갈 것입니다.</p>
+						</div>
+						<div class="imgBox img1"><img src="../../image/company/roundBox.png" alt="roundBox"></div>
+						<div class="imgBox img2"><img src="../../image/company/roundBox768.png" alt="roundBox768"></div>
+						<div class="imgBox img3">
+							<p><img src="../../image/company/roundBox1.png" alt="roundBox1"></p>
+							<p><img src="../../image/company/roundBox2.png" alt="roundBox2"></p>
+							<p><img src="../../image/company/roundBox3.png" alt="roundBox3"></p>
+						</div>
+					</div>
+				</div>
+				<!--//vision_builder-->
+				<!--vision_direction-->
+				<div class="vision_direction">
+					<div class="vision_direction_inner inner">
+						<div class="txtBox">
+							<h2>사업방향</h2>
+							<p>유통상업, 대형복합 프로젝트 수행역량과 노하우를 바탕으로 물류플랜트, 토목·환경, 주택사업, FM사업 등 성장사업을 강화하고 <br>시공+개발+운영까지사업영역을 확장하여 일류건설기업으로 도약해 나가겠습니다.</p>
+						</div>
+						<div class="imgBox">
+							<div class="Box">
+								<div class="small_Box bg1">
+									<p><img src="../../image/company/small_Boxbg1.jpg"></p>
+									<div class="txtBox">
+										<p>주택사업&nbsp;&nbsp;&nbsp;<b>VILLIV 사업확대</b></p>
+										<p>자세히보기<span><img src="../../image/company/box_arrow.png" alt="box_arrow"></span><p>
+									</div>
+								</div>
+								<div class="big_Box bg2">
+									<p><img src="../../image/company/big_Boxbg2.jpg"></p>
+									<div class="txtBox">
+										<p>민간사업&nbsp;&nbsp;&nbsp;<b>수주경쟁력 강화</b></p>
+										<p>자세히보기<span><img src="../../image/company/box_arrow.png" alt="box_arrow"></span><p>
+									</div>
+								</div>
+							</div>
+							<div class="Box bottomBox">
+								<div class="small_Box bg4">
+									<p><img src="../../image/company/small_Boxbg4.jpg"></p>
+									<div class="txtBox">
+										<p>공공사업&nbsp;&nbsp;&nbsp;<b>사업참여 방식 다양화</b></p>
+										<p>자세히보기<span><img src="../../image/company/box_arrow.png" alt="box_arrow"></span><p>
+									</div>
+								</div>
+								<div class="big_Box bg3">
+									<p><img src="../../image/company/big_Boxbg3.jpg"></p>
+									<div class="txtBox">
+										<p>레저사업&nbsp;&nbsp;&nbsp;<b>여가와 힐링의 확장</b></p>
+										<p>자세히보기<span><img src="../../image/company/box_arrow.png" alt="box_arrow"></span><p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//vision_direction-->
+				<!--vision_target-->
+				<div class="section1_catalog">
+					<div class="section1_con">
+						<div class="swiper catalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<p><img src="../../image/company/vision_target1.jpg" alt="vision_target1"></p>
+								</div>
+								<div class="swiper-slide">
+									<p><img src="../../image/company/vision_target2.jpg" alt="vision_target2"></p>
+								</div>
+								<div class="swiper-slide">
+									<p><img src="../../image/company/vision_target3.jpg" alt="vision_target3"></p>
+								</div>
+								<div class="swiper-slide sec1_border">
+									<p><img src="../../image/company/vision_target4.jpg" alt="vision_target4"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--//vision_target-->
+				<!--vision_ideology-->
+				<div class="vision_ideology">
+					<div class="vision_ideology_inner inner">
+						<div class="txtBox">
+							<h2>신세계그룹 경영이념</h2>
+							<h3>고객의 불만에서 기회를 찾고 관습을 <br>타파하며 지속적으로 성장하는 <b>혁신기업</b></h3>
+							<p>신세계건설은 비전과 경영이념을 가지고 고객의 행복한 <br>라이프 스타일과 지역사회 발전을 추구하는 가치 창조기업이 되겠습니다.</p>
+						</div>
+						<div class="imgBox">
+							<p><img src="../../image/company/vision_ideologyImg.jpg" alt="vision_ideologyImg"></p>
+						</div>
+					</div>
+				</div>
+				<!--//vision_ideology-->
+			</div>
+			<!--//vision_content-->
+		</div>
+		<!--//vision_wrap-->
+		<!--footer-->
+		<div class="section" id="section6">
+			<div class="footer_content">
+				<div class="topSection">
+					<div class="inner">
+						<div class="leftBox">
+							<h2>RECRUITMEN <br>INFORMATION</h2>
+							<p>기술과 지식만 갖춘 인재는 신세계가 원하는 인재가 아닙니다.</p>
+							<div class="sns">
+								<ul>
+									<li><a href="#"><img src="../../image/main/ins.png" alt="ins"></a></li>
+									<li><a href="#"><img src="../../image/main/face.png" alt="face"></a></li>
+									<li><a href="#"><img src="../../image/main/naver.png" alt="naver"></a></li>
+									<li><a href="#"><img src="../../image/main/youtube.png" alt="youtube"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="rightBox">
+							<div class="sch_box">
+								<form action="">
+									<h2>현재 2개의 채용이 진행 중 입니다.</h2>
+									<div class="form_box">
+										<div class="input_txt">
+											<input type="text" id="" name="" placeholder="검색어를 입력하세요.">
+										</div>
+										<div class="input_btn">
+											<button type="submit"></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottomSection footer1">
+					<div class="inner">
+						<div class="TopSection">
+							<h1><a href="#"><img src="../../image/logo2_6.png" alt="logo2_6"></a></h1>
+							<div class="txt">
+								<div class="txtbox">
+									<p><a href="#">회사소개</a></p>
+									<ul>
+										<li><a href="#">인사말</a></li>
+										<li><a href="#">비전&경영이념</a></li>
+										<li><a href="#">연혁</a></li>
+										<li><a href="#">미래성장 연구소</a></li>
+										<li><a href="#">오시는길</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">사업분야</a></p>
+									<ul>
+										<li><a href="#">주거시설</a></li>
+										<li><a href="#">건축시설</a></li>
+										<li><a href="#">토목시설</a></li>
+										<li><a href="#">레저사업</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">지속가능경영</a></p>
+									<ul>
+										<li><a href="#">개요</a></li>
+										<li><a href="#">투명경영</a></li>
+										<li><a href="#">사회공헌</a></li>
+										<li><a href="#">품질경영</a></li>
+										<li><a href="#">안전보건경영</a></li>
+										<li><a href="#">친환경경영</a></li>
+										<li><a href="#">동반성장</a></li>
+										<li><a href="#">고객상담실</a></li>
+										<li><a href="#">제보</a></li>
+									</ul>
+								</div>
+								<div class="txtbox">
+									<p><a href="#">정보센터</a></p>
+									<ul>
+										<li><a href="#">뉴스</a></li>
+										<li><a href="#">수상</a></li>
+										<li><a href="#">CI & BI</a></li>
+										<li><a href="#">투자정보</a></li>
+										<li><a href="#">채용</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="FamilySite">
+								<div class="family_box">
+									<ul>
+										<li><a href="#">신세계그룹 인사이드</a></li>
+										<li><a href="#">신세계백화점</a></li>
+										<li><a href="#">이마트</a></li>
+										<li><a href="#">신세계 사이먼</a></li>
+										<li><a href="#">이마트 에브리데이</a></li>
+										<li><a href="#">신세계디에프</a></li>
+										<li><a href="#">신세계TV쇼핑</a></li>
+										<li><a href="#">이마트24</a></li>
+										<li><a href="#">신세계프라퍼티</a></li>
+										<li><a href="#">SSG.COM</a></li>
+										<li><a href="#">신세계센트럴시티</a></li>
+										<li><a href="#">신세계 푸드</a></li>
+										<li><a href="#">조선호텔앤리조트</a></li>
+										<li><a href="#">스타벅스커피 코리아</a></li>
+										<li><a href="#">신세계엘앤비</a></li>
+										<li><a href="#">신세계인터내셔날</a></li>
+										<li><a href="#">신세계까사</a></li>
+										<li><a href="#">신세계아이엔씨</a></li>
+										<li><a href="#">시그나이트파트너스</a></li>
+										<li><a href="#">SSG 랜더스</a></li>
+									</ul>
+								</div>
+								<div class="family_btn">FAMILY SITE &nbsp <img src="../../image/main/family_arrowD.png" alt="family_arrowD"></div>
+							</div>
+						</div>
+						<div class="BottomSection">
+							<ul>
+								<li><a href="#">빌리브</a></li>
+								<li><a href="#">자유CC</a></li>
+								<li><a href="#">트리니티클럽</a></li>
+								<li><a href="#">아쿠아필드</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">영상정보처리기기 운영 및 관리 방침</a></li>
+								<li><a href="#">법적고지</a></li>
+								<li><a href="#">고객상담</a></li>
+								<li class="last"><a href="#">신세계건설 신문고</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//footer-->
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<script src='https://cdn.jsdelivr.net/npm/swiper-animation@1/build/SwiperAnimation.min.js'></script>
+	<script>
+	    $(document).ready(function(){
+			var swiper = new Swiper(".catalog", {
+			    autoHeight:true,
+			    mousewheel:true, //휠
+			    breakpoints: {
+					976: {
+						slidesPerView: 4,
+						spaceBetween: 20,
+						centeredSlides: true,
+					},
+				},
+		    });
+	    });
+	</script>
+ </body>
+</html>
